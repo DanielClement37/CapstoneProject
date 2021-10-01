@@ -1,0 +1,1 @@
+This folder will have the react components that are the root components for each page
