@@ -1,5 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2a352332-f815-4428-b6ed-f74c8c7d3644" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Toolbox/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Toolbox/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Toolbox/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toolbox.Api/obj/Debug/net5.0/Toolbox.Api.csproj.AssemblyReference.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toolbox.Data/Models/User.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toolbox.Services/Interfaces/IAccountService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toolbox.Services/Services/AccountService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Toolbox.Test/obj/Debug/net5.0/Toolbox.Test.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Toolbox/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Toolbox/.idea/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Toolbox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Toolbox/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Api/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Api/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Api/obj/Debug/net5.0/Toolbox.Api.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Api/obj/Debug/net5.0/Toolbox.Api.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Api/obj/Debug/net5.0/Toolbox.Api.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Api/obj/Debug/net5.0/Toolbox.Api.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Api/obj/Toolbox.Api.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Api/obj/Toolbox.Api.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Api/obj/Toolbox.Api.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Api/obj/Toolbox.Api.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Api/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Api/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Api/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Api/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Api/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Api/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Api/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Api/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Data/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Data/obj/Debug/net5.0/Toolbox.Data.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Data/obj/Debug/net5.0/Toolbox.Data.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Data/obj/Debug/net5.0/Toolbox.Data.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Data/obj/Debug/net5.0/Toolbox.Data.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Data/obj/Toolbox.Data.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Data/obj/Toolbox.Data.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Data/obj/Toolbox.Data.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Data/obj/Toolbox.Data.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Data/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Data/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Data/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Data/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Data/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Data/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Data/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Data/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Services/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Services/obj/Debug/net5.0/Toolbox.Services.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Services/obj/Debug/net5.0/Toolbox.Services.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Services/obj/Debug/net5.0/Toolbox.Services.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Services/obj/Debug/net5.0/Toolbox.Services.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Services/obj/Toolbox.Services.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Services/obj/Toolbox.Services.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Services/obj/Toolbox.Services.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Services/obj/Toolbox.Services.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Services/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Services/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Services/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Services/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Services/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Services/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Services/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Services/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Test/obj/Debug/net5.0/Toolbox.Test.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Test/obj/Debug/net5.0/Toolbox.Test.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Test/obj/Debug/net5.0/Toolbox.Test.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Test/obj/Debug/net5.0/Toolbox.Test.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Test/obj/Toolbox.Test.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Test/obj/Toolbox.Test.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Test/obj/Toolbox.Test.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Test/obj/Toolbox.Test.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Test/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Test/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Test/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Test/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Test/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Test/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toolbox.Test/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Toolbox.Test/obj/rider.project.restore.info" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1yxUPk9JdTJNdqTv0zzb3GlFSJP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Toolbox">
     <configuration name="Toolbox" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Toolbox.csproj" />
@@ -61,5 +132,23 @@
         <option name="Build" />
       </method>
     </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>

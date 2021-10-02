@@ -8,26 +8,24 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Daniel\\.nuget\\packages\\": {}
+    "C:\\Users\\danie\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code\\Capstone\\TeachersToolBox\\Toolbox\\Toolbox.Data\\Toolbox.Data.csproj",
+      "projectUniqueName": "C:\\Storage\\School\\4901\\TeachersToolBox\\Toolbox\\Toolbox.Data\\Toolbox.Data.csproj",
       "projectName": "Toolbox.Data",
-      "projectPath": "D:\\Code\\Capstone\\TeachersToolBox\\Toolbox\\Toolbox.Data\\Toolbox.Data.csproj",
-      "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-      "outputPath": "D:\\Code\\Capstone\\TeachersToolBox\\Toolbox\\Toolbox.Data\\obj\\",
+      "projectPath": "C:\\Storage\\School\\4901\\TeachersToolBox\\Toolbox\\Toolbox.Data\\Toolbox.Data.csproj",
+      "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
+      "outputPath": "C:\\Storage\\School\\4901\\TeachersToolBox\\Toolbox\\Toolbox.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -60,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
