@@ -276,9 +276,12 @@ __pycache__/
 # tools/
 
 # End of https://www.toptal.com/developers/gitignore/api/aspnetcore
-/Toolbox/Toolbox.Data/Toolbox.Data.csproj
+
 /Toolbox/Toolbox.Data/obj/*
 /Toolbox/Toolbox.Api/obj/*
 /Toolbox/Toolbox.Services/obj/*
 /Toolbox/Toolbox.Test/obj/*
-Toolbox/Toolbox.Api/Toolbox.Api.csproj
+/Toolbox/Toolbox.Api/Toolbox.Api.csproj
+/Toolbox/Toolbox.Data/Toolbox.Data.csproj
+/Toolbox/Toolbox.Services/Toolbox.Services.csproj
+/Toolbox/Toolbox.Test/Toolbox.Test.csproj
