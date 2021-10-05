@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,6 +18,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Toolbox.Data;
 using Toolbox.Data.Models;
+using Toolbox.Services.Interfaces;
+using Toolbox.Services.Services;
 
 namespace Toolbox.Api
 {
@@ -37,6 +40,12 @@ namespace Toolbox.Api
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Toolbox.Api", Version = "v1" });
+            });
+            
+            services.AddDbContext<ToolBoxDBContext>(opts =>
+            {
+                opts.EnableDetailedErrors();
+                opts.UseNpgsql(Configuration.GetConnectionString("toolbox.dev"));
             });
             
             services.AddIdentity<User, IdentityRole>()
@@ -82,6 +91,7 @@ namespace Toolbox.Api
             });
             
             //Add Scoped Services here
+            services.AddScoped<IAccountService, AccountService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

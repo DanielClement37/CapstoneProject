@@ -75,6 +75,7 @@ namespace Toolbox.Api.Controllers
                 var newUser = new User()
                 {
                     Email = register.Email,
+                    UserName = Guid.NewGuid().ToString(), //TODO: Decide on if usernames are allowed
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now,
                 };
