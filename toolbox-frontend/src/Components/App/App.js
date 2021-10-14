@@ -1,12 +1,16 @@
 
 import './App.css';
+import React from 'react';
+import LoginPage from '../../Pages/LoginPage';
+import SignInPage from '../../Pages/SignInPage';
 
-function App() {
-  return (
-    <div className="App">
-     App Component
-    </div>
-  );
+
+class App extends React.Component{
+    render(){
+        return (
+            <LoginPage />
+        )
+    }
 }
 
 export default App;

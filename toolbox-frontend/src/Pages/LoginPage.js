@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
+//import './LoginPage.css';
 
 function LoginPage() {
     return (
-        <div>
-            LoginPage
-        </div>
+        <div className = "title">Welcome Back to Teachers Toolbox</div>
     )
 }
 
-export default LoginPage
+export default LoginPage;
