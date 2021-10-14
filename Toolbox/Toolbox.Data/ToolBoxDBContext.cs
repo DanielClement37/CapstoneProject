@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Toolbox.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Toolbox.Data
 {
-    public class ToolBoxDBContext : IdentityDbContext<User>
+    public class ToolBoxDBContext : DbContext
     {
         public ToolBoxDBContext(DbContextOptions options) : base(options)
         {
