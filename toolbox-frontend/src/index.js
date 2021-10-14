@@ -16,5 +16,3 @@ const routs = (
    </BrowserRouter>
 );
 ReactDOM.render(<App />, document.getElementById('root'));
-//ReactDOM.render(<LoginPage />, document.getElementById('root'));
-//ReactDOM.render(<SignInPage />, document.getElementById('root'));
