@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Toolbox.Api.Controllers
 {
+
     [ApiController]
-    [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -23,7 +24,8 @@ namespace Toolbox.Api.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet("api/weather")]
+        
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
@@ -35,5 +37,14 @@ namespace Toolbox.Api.Controllers
             })
             .ToArray();
         }
+
+        [Authorize]
+        [HttpGet("api/private")]
+        public IActionResult PrivateRoute()
+        {
+            return Ok("this is a private route");
+        }
     }
+    
+    
 }

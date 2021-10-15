@@ -11,7 +11,7 @@ const routs = (
       <div>
          <Route path="/" component={App} />
          <Route path="/loginpage" component={LoginPage} />
-         <Route path="/signinpage" component={SignInPage} />
+    //     <Route path="/signinpage" component={SignInPage} />
       </div>
    </BrowserRouter>
 );
