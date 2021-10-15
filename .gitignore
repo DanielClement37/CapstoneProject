@@ -285,3 +285,5 @@ __pycache__/
 /Toolbox/Toolbox.Data/Toolbox.Data.csproj
 /Toolbox/Toolbox.Services/Toolbox.Services.csproj
 /Toolbox/Toolbox.Test/Toolbox.Test.csproj
+
+package-lock.json
