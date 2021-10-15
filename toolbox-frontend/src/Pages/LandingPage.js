@@ -1,11 +1,12 @@
 import React from 'react'
 
-function SignInPage() {
+
+const LandingPage = () => {
     return (
         <div>
-            SignInPage
+            
         </div>
     )
 }
 
-export default SignInPage
+export default LandingPage
