@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route, BrowserRouter } from 'react-router-dom'
 import './index.css';
 import App from './Components/App/App';
+import LoginPage from './Pages/LoginPage';
+import SignInPage from './Pages/SignInPage';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const routs = (
+   <BrowserRouter>
+      <div>
+         <Route path="/" component={App} />
+         <Route path="/loginpage" component={LoginPage} />
+    //     <Route path="/signinpage" component={SignInPage} />
+      </div>
+   </BrowserRouter>
 );
+ReactDOM.render(<App />, document.getElementById('root'));
