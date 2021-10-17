@@ -1,27 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Toolbox.Api.Handlers;
 using Toolbox.Data;
+using Toolbox.Services.Interfaces;
+using Toolbox.Services.Services;
 
 namespace Toolbox.Api
 {
@@ -55,7 +46,7 @@ namespace Toolbox.Api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Toolbox.Api", Version = "v1" });
             });
             
-            services.AddDbContext<ToolBoxDBContext>(opts =>
+            services.AddDbContext<ToolBoxDbContext>(opts =>
             {
                 opts.EnableDetailedErrors();
                 opts.UseNpgsql(Configuration.GetConnectionString("toolbox.dev"));
@@ -82,7 +73,8 @@ namespace Toolbox.Api
                 
             //Add Scoped Services here
             services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
-            
+            services.AddScoped<IClassroomService, ClassroomService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
