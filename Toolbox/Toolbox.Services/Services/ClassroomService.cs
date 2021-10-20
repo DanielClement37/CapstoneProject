@@ -10,12 +10,17 @@ namespace Toolbox.Services.Services
     {
         public Task AddClassAsync(Classroom classroom)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task<List<Classroom>> GetTeachersClassesAsync(string teacherId)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+        }
+
+        public Task EditClass(Classroom classroom)
+        {
+            throw new NotImplementedException();
         }
 
         public Task DeleteClassAsync(Guid classroomId)
@@ -25,17 +30,32 @@ namespace Toolbox.Services.Services
 
         public Task AddStudentToClassAsync(Student student)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+        }
+
+        public Task EditStudentAsync(Student student)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Student> GetStudentAsync(Guid studentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteStudentAsync(Guid studentId)
+        {
+            throw new NotImplementedException();
         }
 
         public Task<Student> PickRandomStudentAsync()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task<List<List<Student>>> GroupStudentsAsync(GroupStudentsOptions options)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

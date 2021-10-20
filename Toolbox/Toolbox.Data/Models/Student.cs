@@ -16,8 +16,10 @@ namespace Toolbox.Data.Models
         [Required(ErrorMessage = "Needs a first name")]
         public string LastName { get; set; }
         
-        public Gender Gender { get; set; }
+        public Gender? Gender { get; set; }
         public bool IsPresent { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
         [ForeignKey("ClassroomId")]
         public Classroom Classroom { get; set; }
     }

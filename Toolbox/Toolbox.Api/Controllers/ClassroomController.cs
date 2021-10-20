@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Toolbox.Data.Models;
@@ -19,19 +21,26 @@ namespace Toolbox.Api.Controllers
             _classroomService = classroomService;
         }
 
-        [HttpPost("api/classroom")]
-        public async Task<IActionResult> AddClass(string teacherId)
+        [Authorize]
+        [HttpPost("api/classroom")]     //https://localhost:5000/api/classroom
+        public async Task<IActionResult> AddClass(AddClassRequest requestModel)
         {
             //TODO: flesh this out
             var classroom = new Classroom()
             {
-                TeacherId = teacherId
+                TeacherId = requestModel.TeacherId,
+                ClassName = requestModel.ClassName,
+                CreatedAt = DateTime.Now,
+                UpdatedAt = DateTime.Now
             };
             await _classroomService.AddClassAsync(classroom);
             
+            _logger.Log(LogLevel.Information,"Classroom Created ");
             return Ok();
         }
 
+        [Authorize]
+        [HttpGet("api/classroom/{teacherId}")]
         public async Task<IActionResult> GetTeachersClasses(string teacherId)
         {
             //TODO: flesh this out and potentially rename to be less verbose
@@ -39,5 +48,10 @@ namespace Toolbox.Api.Controllers
             return Ok(classes);
         }
 
+        public async Task<IActionResult> EditClass()
+        {
+            
+            return Ok();
+        }
     }
 }

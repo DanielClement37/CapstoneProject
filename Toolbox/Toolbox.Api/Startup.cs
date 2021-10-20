@@ -66,7 +66,7 @@ namespace Toolbox.Api
                     };
                 });
             
-            services.AddAuthorization(options =>
+            services.AddAuthorization(options =>    //TODO: add more policies for auth stuff
             {
                 options.AddPolicy("read:weather", policy => policy.Requirements.Add(new HasScopeRequirement("read:weather", domain)));
             });

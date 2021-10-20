@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Toolbox.Data;
@@ -9,9 +10,10 @@ using Toolbox.Data;
 namespace Toolbox.Data.Migrations
 {
     [DbContext(typeof(ToolBoxDbContext))]
-    partial class ToolBoxDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211017210804_classname")]
+    partial class classname
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,14 +30,8 @@ namespace Toolbox.Data.Migrations
                     b.Property<string>("ClassName")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
-
                     b.Property<string>("TeacherId")
                         .HasColumnType("text");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp without time zone");
 
                     b.HasKey("ClassId");
 
@@ -51,14 +47,11 @@ namespace Toolbox.Data.Migrations
                     b.Property<Guid>("ClassroomId")
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
-
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int?>("Gender")
+                    b.Property<int>("Gender")
                         .HasColumnType("integer");
 
                     b.Property<bool>("IsPresent")
@@ -67,9 +60,6 @@ namespace Toolbox.Data.Migrations
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp without time zone");
 
                     b.HasKey("StudentId");
 
