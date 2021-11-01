@@ -48,10 +48,31 @@ namespace Toolbox.Api.Controllers
             return Ok(classes);
         }
 
-        public async Task<IActionResult> EditClass()
+        [Authorize]
+        [HttpPut("api/classroom")]
+        public async Task<IActionResult> EditClass(EditClassRequest requestModel)
         {
-            
+            //get current Classroom data
+            var currClassroom = await _classroomService.GetClassroom(requestModel.ClassroomId);
+            //replace with new
+            var oldClassname = currClassroom.ClassName;
+            currClassroom.ClassName = requestModel.Classname;
+            //save
+            await _classroomService.EditClass(currClassroom);
+            //log and return
+            _logger.Log(LogLevel.Information, $"Classroom: {currClassroom.ClassId} changed name from {oldClassname} to {currClassroom.ClassName}");
             return Ok();
         }
+
+        [Authorize]
+        [HttpDelete("api/classroom/{classroomId}")]
+        public async Task<IActionResult> DeleteClass(Guid classroomId)
+        {
+            await _classroomService.DeleteClassAsync(classroomId);
+            _logger.Log(LogLevel.Information, $"classroom: {classroomId} was deleted");
+            return Ok();
+        }
+        
+        
     }
 }

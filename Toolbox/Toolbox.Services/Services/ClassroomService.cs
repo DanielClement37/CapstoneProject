@@ -18,6 +18,11 @@ namespace Toolbox.Services.Services
             throw new NotImplementedException();
         }
 
+        public Task<Classroom> GetClassroom(Guid classroomId)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task EditClass(Classroom classroom)
         {
             throw new NotImplementedException();
@@ -34,6 +39,11 @@ namespace Toolbox.Services.Services
         }
 
         public Task EditStudentAsync(Student student)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Student>> GetClassroomStudents(Guid classroomId)
         {
             throw new NotImplementedException();
         }
