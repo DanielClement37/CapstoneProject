@@ -86,9 +86,13 @@ namespace Toolbox.Services.Services
             await _db.SaveChangesAsync();
         }
 
-        public Task<Student> GetRandomStudentAsync(Guid classroomId)
+        public async Task<Student> GetRandomStudentAsync(Guid classroomId)
         {
-            throw new NotImplementedException();
+            var students =await _db.Students.Where(s => s.ClassroomId == classroomId).ToListAsync();
+            var rnd = new Random();
+            var rndIndex = rnd.Next(students.Count);
+
+            return students[rndIndex];
         }
 
         public Task<List<List<Student>>> GroupStudentsAsync(GroupStudentsOptions options, Guid classroomId)
