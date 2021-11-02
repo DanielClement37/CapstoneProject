@@ -23,7 +23,7 @@ namespace Toolbox.Api.Controllers
 
         [Authorize]
         [HttpPost("api/classroom")]     //https://localhost:5000/api/classroom
-        public async Task<IActionResult> AddClass(AddClassRequest requestModel)
+        public async Task<IActionResult> AddClass([FromBody] AddClassRequest requestModel)
         {
             //TODO: flesh this out
             var classroom = new Classroom()
@@ -50,7 +50,7 @@ namespace Toolbox.Api.Controllers
 
         [Authorize]
         [HttpPut("api/classroom")]
-        public async Task<IActionResult> EditClass(EditClassRequest requestModel)
+        public async Task<IActionResult> EditClass([FromBody]EditClassRequest requestModel)
         {
             //get current Classroom data
             var currClassroom = await _classroomService.GetClassroom(requestModel.ClassroomId);
@@ -73,6 +73,8 @@ namespace Toolbox.Api.Controllers
             return Ok();
         }
 
+        [Authorize]
+        [HttpPost("api/classroom/student")]
         public async Task<IActionResult> AddStudent([FromBody] AddStudentRequest requestModel)
         {
             var student = new Student()
@@ -90,7 +92,13 @@ namespace Toolbox.Api.Controllers
             _logger.Log(LogLevel.Information, $"Student added: {student.StudentId}");
             return Ok();
         }
-        
-        
+
+        public async Task<IActionResult> EditStudent([FromBody] EditStudentRequest requestModel)
+        {
+            var currStudent = await _classroomService.GetStudentAsync(requestModel.StudentId);
+            
+            
+            return Ok();
+        }
     }
 }
