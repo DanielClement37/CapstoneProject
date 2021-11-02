@@ -33,7 +33,7 @@ namespace Toolbox.Services.Services
             throw new NotImplementedException();
         }
 
-        public Task AddStudentToClassAsync(Student student)
+        public Task AddStudentAsync(Student student)
         {
             throw new NotImplementedException();
         }

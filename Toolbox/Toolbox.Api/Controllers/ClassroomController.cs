@@ -72,6 +72,24 @@ namespace Toolbox.Api.Controllers
             _logger.Log(LogLevel.Information, $"classroom: {classroomId} was deleted");
             return Ok();
         }
+
+        public async Task<IActionResult> AddStudent([FromBody] AddStudentRequest requestModel)
+        {
+            var student = new Student()
+            {
+                ClassroomId = requestModel.ClassroomId,
+                FirstName = requestModel.FirstName,
+                LastName = requestModel.LastName,
+                Gender = requestModel.Gender,
+                IsPresent = false,
+                CreatedAt = DateTime.Now,
+                UpdatedAt = DateTime.Now
+            };
+            await _classroomService.AddStudentAsync(student);
+            
+            _logger.Log(LogLevel.Information, $"Student added: {student.StudentId}");
+            return Ok();
+        }
         
         
     }

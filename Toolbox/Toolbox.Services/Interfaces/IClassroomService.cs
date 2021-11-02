@@ -12,7 +12,7 @@ namespace Toolbox.Services.Interfaces
         public Task<Classroom> GetClassroom(Guid classroomId);
         public Task EditClass(Classroom classroom);
         public Task DeleteClassAsync(Guid classroomId);
-        public Task AddStudentToClassAsync(Student student);
+        public Task AddStudentAsync(Student student);
         public Task EditStudentAsync(Student student);
         public Task<List<Student>> GetClassroomStudents(Guid classroomId);
         public Task<Student> GetStudentAsync(Guid studentId);
