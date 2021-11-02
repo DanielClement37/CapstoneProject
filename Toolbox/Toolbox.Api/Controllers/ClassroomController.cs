@@ -49,18 +49,17 @@ namespace Toolbox.Api.Controllers
         }
 
         [Authorize]
-        [HttpPut("api/classroom")]
-        public async Task<IActionResult> EditClass([FromBody]EditClassRequest requestModel)
+        [HttpPut("api/classroom/{classroomId}")]
+        public async Task<IActionResult> EditClass([FromBody]EditClassRequest requestModel, Guid classroomId)
         {
-            //get current Classroom data
-            var currClassroom = await _classroomService.GetClassroom(requestModel.ClassroomId);
-            //replace with new
-            var oldClassname = currClassroom.ClassName;
-            currClassroom.ClassName = requestModel.Classname;
+            var classroom = new Classroom()
+            {
+                ClassName = requestModel.Classname
+            };
             //save
-            await _classroomService.EditClass(currClassroom);
+            await _classroomService.EditClass(classroom, classroomId);
             //log and return
-            _logger.Log(LogLevel.Information, $"Classroom: {currClassroom.ClassId} changed name from {oldClassname} to {currClassroom.ClassName}");
+            _logger.Log(LogLevel.Information, $"Classroom: {classroom.ClassId} updated");
             return Ok();
         }
 
@@ -93,12 +92,49 @@ namespace Toolbox.Api.Controllers
             return Ok();
         }
 
-        public async Task<IActionResult> EditStudent([FromBody] EditStudentRequest requestModel)
+        [Authorize]
+        [HttpPut("api/classroom/student/{studentId}")]
+        public async Task<IActionResult> EditStudent([FromBody] EditStudentRequest requestModel, Guid studentId)
         {
-            var currStudent = await _classroomService.GetStudentAsync(requestModel.StudentId);
-            
-            
+            var student = new Student()
+            {
+                FirstName = requestModel.FirstName,
+                LastName = requestModel.LastName,
+                Gender = requestModel.Gender
+            };
+            await _classroomService.EditStudentAsync(student, studentId);
+
             return Ok();
+        }
+
+        [Authorize]
+        [HttpGet("api/classroom/students/{classroomId}")]
+        public async Task<IActionResult> GetClassroomStudents(Guid classroomId)
+        {
+            var students = await _classroomService.GetClassroomStudents(classroomId);
+            return Ok(students);
+        }
+
+        [Authorize]
+        [HttpDelete("api/classroom/student/{studentId}")]
+        public async Task<IActionResult> DeleteStudent(Guid studentId)
+        {
+            await _classroomService.DeleteStudentAsync(studentId);
+            return Ok();
+        }
+
+        [Authorize]
+        [HttpGet("api/classroom/student/{classroomId}")]
+        public async Task<IActionResult> GetRandomStudent(Guid classroomId)
+        {
+            var student = await _classroomService.GetRandomStudentAsync(classroomId);
+            return Ok(student);
+        }
+
+        public async Task<IActionResult> GroupStudents(Guid classroomId)
+        {
+            var groupedstudents = await _classroomService.GroupStudentsAsync(new GroupStudentsOptions(), classroomId);
+            return Ok(groupedstudents);
         }
     }
 }
