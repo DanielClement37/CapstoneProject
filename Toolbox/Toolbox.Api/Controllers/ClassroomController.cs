@@ -131,6 +131,8 @@ namespace Toolbox.Api.Controllers
             return Ok(student);
         }
 
+        [Authorize]
+        [HttpGet("api/classroom/studentsgrouped/{classroomId}")]
         public async Task<IActionResult> GroupStudents(Guid classroomId)
         {
             var groupedstudents = await _classroomService.GroupStudentsAsync(new GroupStudentsOptions(), classroomId);

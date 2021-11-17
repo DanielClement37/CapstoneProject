@@ -24,18 +24,11 @@ namespace Toolbox.Api.Controllers
             _logger = logger;
         }
 
-        [HttpGet("api/weather")]
+        [HttpGet("api/public")]
         
-        public IEnumerable<WeatherForecast> Get()
+        public IActionResult PublicRoute()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return Ok("this is a public route");
         }
 
         [Authorize]
