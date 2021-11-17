@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 namespace Toolbox.Api.Controllers
 {
 
+    [Produces("application/json")]
     [ApiController]
     public class WeatherForecastController : ControllerBase
     {

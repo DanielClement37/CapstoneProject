@@ -9,6 +9,7 @@ using Toolbox.Services.Interfaces;
 
 namespace Toolbox.Api.Controllers
 {
+    [Produces("application/json")]
     [ApiController]
     public class ClassroomController : ControllerBase
     {
