@@ -41,7 +41,7 @@ namespace Toolbox.Api
                 opts.UseNpgsql(Configuration.GetConnectionString("toolbox.dev"));
             });
             
-            string domain = $"https://{Configuration["Auth0:Domain"]}/";
+            var domain = $"https://{Configuration["Auth0:Domain"]}/";
             services
                 .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>

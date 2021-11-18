@@ -39,9 +39,17 @@ namespace Toolbox.Api.Controllers
             _logger.Log(LogLevel.Information,"Classroom Created ");
             return Ok();
         }
+        
+        [Authorize]
+        [HttpGet("api/classroom/{classroomId}")]
+        public async Task<IActionResult> GetClassroom(Guid classroomId)
+        {
+            var classroom = await _classroomService.GetClassroom(classroomId);
+            return Ok(classroom);
+        }
 
         [Authorize]
-        [HttpGet("api/classroom/{teacherId}")]
+        [HttpGet("api/teacher/{teacherId}")]
         public async Task<IActionResult> GetTeachersClasses(string teacherId)
         {
             //TODO: flesh this out and potentially rename to be less verbose
@@ -60,7 +68,7 @@ namespace Toolbox.Api.Controllers
             //save
             await _classroomService.EditClass(classroom, classroomId);
             //log and return
-            _logger.Log(LogLevel.Information, $"Classroom: {classroom.ClassId} updated");
+            _logger.Log(LogLevel.Information, $"Classroom {classroom.ClassName} updated");
             return Ok();
         }
 
@@ -74,7 +82,7 @@ namespace Toolbox.Api.Controllers
         }
 
         [Authorize]
-        [HttpPost("api/classroom/student")]
+        [HttpPost("api/student")]
         public async Task<IActionResult> AddStudent([FromBody] AddStudentRequest requestModel)
         {
             var student = new Student()
@@ -94,7 +102,7 @@ namespace Toolbox.Api.Controllers
         }
 
         [Authorize]
-        [HttpPut("api/classroom/student/{studentId}")]
+        [HttpPut("api/student/{studentId}")]
         public async Task<IActionResult> EditStudent([FromBody] EditStudentRequest requestModel, Guid studentId)
         {
             var student = new Student()
@@ -109,7 +117,7 @@ namespace Toolbox.Api.Controllers
         }
 
         [Authorize]
-        [HttpGet("api/classroom/students/{classroomId}")]
+        [HttpGet("api/students/{classroomId}")]
         public async Task<IActionResult> GetClassroomStudents(Guid classroomId)
         {
             var students = await _classroomService.GetClassroomStudents(classroomId);
@@ -117,7 +125,7 @@ namespace Toolbox.Api.Controllers
         }
 
         [Authorize]
-        [HttpDelete("api/classroom/student/{studentId}")]
+        [HttpDelete("api/student/{studentId}")]
         public async Task<IActionResult> DeleteStudent(Guid studentId)
         {
             await _classroomService.DeleteStudentAsync(studentId);
@@ -133,7 +141,7 @@ namespace Toolbox.Api.Controllers
         }
 
         [Authorize]
-        [HttpGet("api/classroom/studentsgrouped/{classroomId}")]
+        [HttpGet("api/studentsGrouped/{classroomId}")]
         public async Task<IActionResult> GroupStudents(Guid classroomId)
         {
             var groupedstudents = await _classroomService.GroupStudentsAsync(new GroupStudentsOptions(), classroomId);
