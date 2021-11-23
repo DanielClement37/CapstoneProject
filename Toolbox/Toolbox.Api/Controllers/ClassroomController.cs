@@ -26,7 +26,11 @@ namespace Toolbox.Api.Controllers
         [HttpPost("api/classroom")]     //https://localhost:5000/api/classroom
         public async Task<IActionResult> AddClass([FromBody] AddClassRequest requestModel)
         {
-            //TODO: flesh this out
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Model State is not valid");
+            }
+            
             var classroom = new Classroom()
             {
                 TeacherId = requestModel.TeacherId,

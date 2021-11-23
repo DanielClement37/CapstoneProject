@@ -4,7 +4,7 @@ import axios from "axios";
 import { audience } from "../../Secrets";
 
 const Profile = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
 
   if (isLoading) {
     return <div>Loading ...</div>;
