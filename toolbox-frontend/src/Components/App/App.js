@@ -1,7 +1,6 @@
 
 import './App.css';
-/*import Apple from '../../Images/Apple-logo.png';
-import Google from '../../Images/Google-logo.png';*/
+import './Dashboard.css'
 
 function App() {
   return (
@@ -11,23 +10,53 @@ function App() {
           <div className="Login-header">
             Welcome Back to Teacher's Toolbox
           </div>
-          <input className="Login-input" placeholder="Email" type="text"></input>
-          <input className="Login-input" placeholder="Password" type="password"></input>
           <button className="Login-button" type="button">Login</button>
-          <h2><span>or connect with</span></h2>
+          <h2><span>created by</span></h2>
           <div className="Media-buttons">
-            <button className="Media-button">Google</button>
-            <button className="Media-button">Apple</button>
-            <button className="Media-button">Facebook</button>
+            <span className="Login-subtext">Daniel Clement</span>
+            <span className="Login-subtext">Isabel Wells</span>
+            <span className="Login-subtext">Sarah Wainwright</span>
           </div>
-        </div>
-        <div className="Moving-container">
-          <div className="Moving-header">Need an Account?</div>
-          <button className="Moving-button">Sign Up</button>
         </div>
       </div>
     </div>
   );
 }
+
+/*function App() {
+  return (
+    <div className="App">
+      <div className="Dashboard-container">
+        <div className="Account-container"></div>
+        <div className="Dashboard-header">
+          <h1><span>Welcome back, Professor Ludi!</span></h1>
+        </div>
+        <div className="Class-container">
+          <div className="Class-box">
+            <div className="Class-title">
+              Capstone 2021
+              <span><br />CSCE4901.001</span>
+            </div>
+          </div>
+          <div className="Class-box">
+            <div className="Class-title">
+              Algorithms Fall
+              <span><br />CSCE4110.003</span>
+            </div>
+          </div>
+          <div className="Class-box">
+            <div className="Class-title">
+              Networking
+              <span><br />CSCE3530.002</span>
+            </div>
+          </div>
+          <div className="Add-class-box">
+            +
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}*/
 
 export default App;
