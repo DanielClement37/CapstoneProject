@@ -19,11 +19,11 @@
 
 .Login-container {
   position: relative;
-  grid-area: 1 / 1 / 2 / 3;
-  margin-right: 25%;
-  margin-left: 25%;
-  margin-top: 10%;
-  margin-bottom: 18%;
+  grid-area: 1 / 2 / 2 / 3;
+  margin-right: 0%;
+  margin-left: 0%;
+  margin-top: 38%;
+  margin-bottom: 25%;
   color: #226900;
 }
 
@@ -68,9 +68,9 @@
   overflow: hidden;
   border-radius: 3vh;
   width: 85%;
-  height: 7vh;
+  height: 9vh;
   margin-bottom: 1.5vh;
-  font-size: 2.5vh;
+  font-size: 3vh;
   text-align: center;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -98,6 +98,7 @@ h2 {
   line-height: 0.1em;
   margin-left: 8%;
   margin-right: 8%;
+  margin-top: 5%;
 } 
 
 h2 span { 
@@ -108,6 +109,8 @@ h2 span {
 .Media-buttons {
   display: inline-block; 
   width: 100%;
+  margin-top: 1%;
+  margin-left: 0%;
 }
 
 .Media-button {
@@ -119,11 +122,18 @@ h2 span {
   color: #226900;
   margin: 5%;
   padding: 2% 0 2%;
-  width: 22%;
+  width: 24%;
   font-size: 2vh;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   transition: 0.3s;
+}
+
+.Login-subtext {
+  text-align: center;
+  width: 22%;
+  margin-left: 9.5%;
+  margin-right: 7%;
 }
 
 .Media-button:hover {

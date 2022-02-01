@@ -1,32 +1,35 @@
 
 import './App.css';
-/*import Apple from '../../Images/Apple-logo.png';
-import Google from '../../Images/Google-logo.png';*/
+import {  Route, Routes } from "react-router-dom";
+import CustomRouter from '../CustomRouter/CustomRouter';
+import Loading from '../Loading/Loading';
+import Landing from '../Landing/Landing';
+import Dashboard from '../Dashboard/Dashboard';
+import { useAuth0 } from "@auth0/auth0-react";
+import history from "../../Utils/history"
+
 
 function App() {
+
+  const { isLoading, error } = useAuth0();
+
+  if (error) {
+    return <div>Oops... {error.message}</div>;
+  }
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
-    <div className="App">
-      <div className="App-container">
-        <div className="Login-container">
-          <div className="Login-header">
-            Welcome Back to Teacher's Toolbox
-          </div>
-          <input className="Login-input" placeholder="Email" type="text"></input>
-          <input className="Login-input" placeholder="Password" type="password"></input>
-          <button className="Login-button" type="button">Login</button>
-          <h2><span>or connect with</span></h2>
-          <div className="Media-buttons">
-            <button className="Media-button">Google</button>
-            <button className="Media-button">Apple</button>
-            <button className="Media-button">Facebook</button>
-          </div>
-        </div>
-        <div className="Moving-container">
-          <div className="Moving-header">Need an Account?</div>
-          <button className="Moving-button">Sign Up</button>
-        </div>
+    <CustomRouter history={history}>
+      <div id="app" className="app">
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
       </div>
-    </div>
+    </CustomRouter>
   );
 }
 
