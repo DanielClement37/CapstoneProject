@@ -1,0 +1,215 @@
+.App {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.App-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: #FFFFFF;
+}
+
+.Login-container {
+  position: relative;
+  grid-area: 1 / 2 / 2 / 3;
+  margin-right: 0%;
+  margin-left: 0%;
+  margin-top: 38%;
+  margin-bottom: 25%;
+  color: #226900;
+}
+
+.Login-header {
+  position: relative;
+  margin-right: 25%;
+  margin-left: 15%;
+  color: #226900;
+  height: 33%;
+  width: 70%;
+  align-self: center;
+  font-size: 2.5vw;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+}
+
+.Login-input[type=text],[type=password] {
+  position: relative;
+  border: 1px solid #226900;
+  color: #242526;
+  outline: #777777;
+  border-radius: 3vh;
+  width: 81%;
+  height: 7vh;
+  margin-bottom: .7vh;
+  margin-left: 7%;
+  margin-right: 10%;
+  font-size: 2.5vh;
+  padding-left: 4%;
+}
+
+.Login-input:active {
+  background-color: #E5E5E5;
+}
+
+
+.Login-button {
+  position: relative;
+  border: 3px solid #226900;
+  background-color: #226900;
+  color: #FFFFFF;
+  overflow: hidden;
+  border-radius: 3vh;
+  width: 85%;
+  height: 9vh;
+  margin-bottom: 1.5vh;
+  font-size: 3vh;
+  text-align: center;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.Login-button:hover {
+  box-shadow: inset 0 0 0 100px #FFFFFF;
+  color: #226900;
+}
+
+.Login-button:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  /*width: 7vh;                                     <---- Turns the login button kinda into a circle on click
+  color: rgba(0, 0, 0, 0);*/
+}
+
+h2 {
+  width: 84%;
+  text-align: center;
+  font-weight: normal; 
+  font-size: 2vh;
+  border-bottom: 1px solid #226900; 
+  line-height: 0.1em;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 5%;
+} 
+
+h2 span { 
+   background:#fff; 
+   padding: 10%;
+}
+
+.Media-buttons {
+  display: inline-block; 
+  width: 100%;
+  margin-top: 1%;
+  margin-left: 0%;
+}
+
+.Media-button {
+  border: 1px solid #226900;
+  border-radius: 2vh;
+  text-align: center; 
+  height: 20%;
+  background-color: #FFFFFF;
+  color: #226900;
+  margin: 5%;
+  padding: 2% 0 2%;
+  width: 24%;
+  font-size: 2vh;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.Login-subtext {
+  text-align: center;
+  width: 22%;
+  margin-left: 9.5%;
+  margin-right: 7%;
+}
+
+.Media-button:hover {
+  box-shadow: inset 0 0 0 100px #226900;
+  color: #FFFFFF;
+}
+
+.Media-button:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  /*width: 7vh;                                     <---- Turns the login button kinda into a circle on click
+  color: rgba(0, 0, 0, 0);*/
+}
+
+.Media-button-img {
+  display: absolute;
+  height: 1vh;
+}
+
+
+.Signup-container {
+  position: relative; 
+  grid-area: 1 / 2 / 2 / 4; 
+}
+
+.Moving-container {
+  position: relative;
+  grid-area: 1 / 3 / 2 / 4; 
+  background-color: #226900;
+  transition: 330ms ease-in-out;
+  padding: 40% 15% 20% 15%;
+
+}
+
+.Moving-container:active {
+  transform: translate(-67vw, 0);
+}
+
+.Moving-header {
+  position: relative;
+  margin-right: 25%;
+  margin-left: 15%;
+  color: #FFFFFF;
+  height: 33%;
+  width: 70%;
+  align-self: center;
+  font-size: 2.5vw;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+}
+
+.Moving-button {
+  position: relative;
+  border: 3px solid #FFFFFF;
+  background-color: #226900;
+  color: #FFFFFF;
+  overflow: hidden;
+  border-radius: 3vh;
+  width: 85%;
+  height: 7vh;
+  margin-bottom: 1.5vh;
+  font-size: 2.5vh;
+  text-align: center;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.Moving-button:hover {
+  box-shadow: inset 0 0 0 100px #FFFFFF;
+  color: #226900;
+}
+
+.Moving-button:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  /*width: 7vh;                                     <---- Turns the login button kinda into a circle on click
+  color: rgba(0, 0, 0, 0);*/
+}

@@ -1,27 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom";
-//import { Route, BrowserRouter } from "react-router-dom";
-import { Auth0Provider } from "@auth0/auth0-react";
 import "./index.css";
-import App from "./App";
-import {clientId, domain, audience} from "./Secrets.js";
+import App from "./Components/App/App";
+import { Auth0Provider } from "@auth0/auth0-react";
+import history from "./Utils/history";
+import { getConfig } from "./Utils/config";
 
-//const routes = (
-//  <BrowserRouter>
-//    <div>
-//      <Route path="/" component={App} />
-//    </div>
-//  </BrowserRouter>
-//);
+const onRedirectCallback = (appState) => {
+  history.push(
+    appState && appState.returnTo ? appState.returnTo : window.location.pathname
+  );
+};
+
+// Please see https://auth0.github.io/auth0-react/interfaces/auth0_provider.auth0provideroptions.html
+// for a full list of the available properties on the provider
+const config = getConfig();
+
+const providerConfig = {
+  domain: config.domain,
+  clientId: config.clientId,
+  ...(config.audience ? { audience: config.audience } : null),
+  redirectUri: window.location.origin,
+  onRedirectCallback,
+};
 
 ReactDOM.render(
-  <Auth0Provider
-    domain= {domain}
-    clientId= {clientId}
-    redirectUri={window.location.origin}
-    audience={audience}
-  >
-    <App />
-  </Auth0Provider>,
+    <Auth0Provider {...providerConfig}>
+      <App />
+    </Auth0Provider>,
   document.getElementById("root")
 );
