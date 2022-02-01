@@ -2,7 +2,7 @@ import React from 'react'
 import '../App/Dashboard.css'
 import { Button, Header, Image, Modal, Form } from 'semantic-ui-react'
 
-function ModalExampleModal() {
+function AddClassModal() {
   const [open, setOpen] = React.useState(false)
 
   return (
@@ -32,4 +32,4 @@ function ModalExampleModal() {
   )
 }
 
-export default ModalExampleModal
+export default AddClassModal
