@@ -9,7 +9,6 @@ function AddClassModal() {
   const [open, setIsOpen] = useState(false);
   const [className, setClassName] = useState("");
 
-  const {}
 
   const inlineStyle = {
     modal: {
