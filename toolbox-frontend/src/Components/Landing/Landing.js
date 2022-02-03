@@ -14,7 +14,7 @@ export default function Landing() {
         navigate("/dashboard");
       }
     }
-
+  
     checkUser(); // check user authentication upon landing on the page
   }, [loginWithRedirect, isAuthenticated]);
 
