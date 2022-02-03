@@ -9,7 +9,7 @@ function AddClassModal() {
   const [open, setIsOpen] = useState(false);
   const [className, setClassName] = useState("");
 
-  const { getAccessTokenSilently } = useAuth0();
+  const { user, getAccessTokenSilently } = useAuth0();
 
   const inlineStyle = {
     modal: {
@@ -24,9 +24,9 @@ function AddClassModal() {
 
     axios
       .post(
-        "http://localhost:5000/api/classroom",
+        "http://localhost:5000/api/classroom",      //TODO: make this an environment variable
         {
-          TeacherId: "auth0|6169ea7f02b3dd0071c9e89a",
+          TeacherId: user.sub,
           ClassName: className,
         },
         {
