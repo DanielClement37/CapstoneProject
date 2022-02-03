@@ -29,7 +29,7 @@ import Modal from '../Modal/AddClassModal'
              </div>
            </div>
            <Modal>
-                name="ModalExampleModal";
+                name="AddClassModal";
            </Modal>
          </div>
        </div>
