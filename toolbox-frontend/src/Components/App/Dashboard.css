@@ -1,0 +1,119 @@
+.Dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    color: #226900;
+}
+
+.Dashboard-header {
+    grid-area: 1 / 1 / 2 / 6;
+}
+
+.Class-container { 
+    grid-area: 2 / 1 / 7 / 6; 
+    padding-left: 2vh;
+    display: inline-block;
+}
+
+.Account-container {
+    grid-area: 1 / 6 / 7 / 7;
+    background-color: grey;
+    width: 50%;
+    height: 100vh; 
+    position: static;
+    margin-right: 0;
+    margin-left: auto;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.Account-container:hover {
+    width: 100%;
+}
+
+h1 {
+    width: 95%;
+    text-align: left;
+    font-weight: bold; 
+    font-size: 4vh;
+    border-bottom: 2px solid #226900; 
+    line-height: .1em;
+    margin-top: 4%;
+} 
+  
+h1 span { 
+    background:#fff; 
+    padding: 3%;
+}
+
+.Class-box {
+    position: relative;
+    float: left;
+    background-color: #226900;
+    color: white;
+    width: 25vh;
+    height: 25vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 4vw;
+    border-radius: 3vh;
+    margin-top: 0vh;
+    overflow: hidden;
+    box-shadow: .5vh .5vh 1vh lightslategray;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.Class-box:active {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.Class-title {
+    position: absolute;
+    width: 25vh;
+    height: 10vh;
+    margin-top: 15vh;
+    padding-right: 20vh;
+    background-color: white;
+    color: #226900;
+    font-size: 2.4vh;
+    text-align: left;
+    padding-left: 2vh;
+    padding-top: 1vh;
+
+}
+
+.Class-title span {
+    font-size: 2vh;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.Add-class-box {
+    display: relative;
+    float: left;
+    background-color: lightgrey;
+    color: white;
+    width: 20vh;
+    height: 20vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 2vw;
+    border-radius: 3vh;
+    margin-top: 2.5vh;
+    overflow: hidden;
+    font-size: 13vh;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.Add-class-box:active {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
