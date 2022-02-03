@@ -9,6 +9,7 @@ function AddClassModal() {
   const [open, setIsOpen] = useState(false);
   const [className, setClassName] = useState("");
 
+  const { getAccessTokenSilently } = useAuth0();
 
   const inlineStyle = {
     modal: {
@@ -18,12 +19,22 @@ function AddClassModal() {
     },
   };
 
-  const AddClass = () => {
+  const AddClass = async () => {
+    const token = await getAccessTokenSilently();
+
     axios
-      .post("http://localhost:5000/api/classroom", {
-        TeacherId: "auth0|6169ea7f02b3dd0071c9e89a",
-        ClassName: className,
-      })
+      .post(
+        "http://localhost:5000/api/classroom",
+        {
+          TeacherId: "auth0|6169ea7f02b3dd0071c9e89a",
+          ClassName: className,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((response) => {
         console.log("Status: ", response.status);
         console.log("Data: ", response.data);
@@ -50,7 +61,11 @@ function AddClassModal() {
           <Form>
             <Form.Field>
               <label>Class Name</label>
-              <input placeholder="Class Name" value={className} onChange={(e) =>setClassName(e.target.value)} />
+              <input
+                placeholder="Class Name"
+                value={className}
+                onChange={(e) => setClassName(e.target.value)}
+              />
             </Form.Field>
           </Form>
         </Modal.Description>
