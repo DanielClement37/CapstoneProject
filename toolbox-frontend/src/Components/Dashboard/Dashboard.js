@@ -14,8 +14,9 @@ import { useAuth0 } from "@auth0/auth0-react";
       <div className="Dashboard-container">
         <div className="Account-container"></div>
         <div className="Dashboard-header">
-          <h1><span>Welcome back, Professor Ludi!</span></h1>
-          <button className="Logout-button" color='green' onClick={() => logout({ redirect: '/'})}>Logout</button>
+          <h1><span>Welcome back, Professor Ludi!
+            <button className="Media-button" onClick={() => logout({ redirect: '/'})}>Logout</button>
+          </span></h1>
         </div>
         <div className="Class-container">
           <div className="Class-box">
