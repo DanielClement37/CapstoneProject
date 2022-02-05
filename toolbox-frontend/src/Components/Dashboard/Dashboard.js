@@ -1,12 +1,11 @@
 import './Dashboard.css'
 import Modal from '../Modal/AddClassModal'
-import { Button } from 'semantic-ui-react'
 import { useAuth0 } from "@auth0/auth0-react";
 
  export default function Dashboard() {
 
 
-  const { logout, isAuthenticated} = useAuth0();
+  const { logout } = useAuth0();
 
 
   return (
@@ -42,6 +41,7 @@ import { useAuth0 } from "@auth0/auth0-react";
           </Modal>
         </div>
       </div>
+      <div></div>
     </div>
   );
  }
