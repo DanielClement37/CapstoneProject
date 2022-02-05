@@ -30,11 +30,9 @@ export default function Landing() {
             <h2>
               <span>created by</span>
             </h2>
-            <div className="Media-buttons">
               <span className="Login-subtext">Daniel Clement</span>
               <span className="Login-subtext">Isabel Wells</span>
               <span className="Login-subtext">Sarah Wainwright</span>
-            </div>
           </div>
       </div>
     </div>
