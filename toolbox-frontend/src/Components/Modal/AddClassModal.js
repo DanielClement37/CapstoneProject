@@ -11,14 +11,6 @@ function AddClassModal() {
 
   const { user, getAccessTokenSilently } = useAuth0();
 
-  const inlineStyle = {
-    modal: {
-      marginTop: "0px !important",
-      marginLeft: "auto",
-      marginRight: "auto",
-    },
-  };
-
   const AddClass = async () => {
     const token = await getAccessTokenSilently();
 
@@ -51,8 +43,7 @@ function AddClassModal() {
       onClose={() => setIsOpen(false)}
       onOpen={() => setIsOpen(true)}
       open={open}
-      trigger={<Button className="Add-class-box">+</Button>}
-      style={inlineStyle.modal}
+      trigger={<button className="Add-class-box">+</button>}
     >
       <Modal.Header>Add A Class</Modal.Header>
       <Modal.Content>

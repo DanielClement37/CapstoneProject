@@ -5,7 +5,6 @@ import Modal from '../Modal/AddClassModal'
    return (
      <div className="App">
        <div className="Dashboard-container">
-         <div className="Account-container"></div>
          <div className="Dashboard-header">
            <h1><span>Welcome back, Professor Ludi!</span></h1>
          </div>
