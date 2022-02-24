@@ -16,7 +16,7 @@ export default function Landing() {
     }
 
     checkUser(); // check user authentication upon landing on the page
-  }, [loginWithRedirect, isAuthenticated]);
+  }, [navigate, isAuthenticated]);
 
   // if user is not authenticated
   return ( // Landing page for app with login button
