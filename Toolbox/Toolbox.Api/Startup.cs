@@ -83,8 +83,9 @@ namespace Toolbox.Api
                 .AllowAnyHeader()
             );
 
-            app.UseHttpsRedirection();
-
+            if(env.IsDevelopment()){
+                app.UseHttpsRedirection();
+            }
             app.UseRouting();
 
             app.UseAuthentication();
