@@ -1,4 +1,6 @@
 FROM postgres:alpine3.14
+# add init.sql file to container
 ADD /Docker/init.sql /docker-entrypoint-initdb.d/
+# enable access and execution of file in containers
+# the conatiner will then initialize with the file when setting up
 RUN chmod 777 /docker-entrypoint-initdb.d/*
-# RUN /docker-entrypoint-initdb.d/init.sql
