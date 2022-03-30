@@ -1,0 +1,42 @@
+# file used to orchestrate the docker images to work in concert
+version: "3.3"
+
+services:
+  app: 
+    container_name: "toolbox"
+    image: "toolbox:latest"
+    build:
+      context: .
+      dockerfile: ./Docker/Dockerfile
+    environment: 
+      DB_CONNECTION: "Server=postgres_db;Posrt=5432;Database=postgres;User Id=postgres;Password=postgres"
+    ports:
+      - target: 5000
+        published: 5000
+        host_ip: 127.0.0.1
+    depends_on:
+      - "postgres_db"
+
+  postgres_db:
+    container_name: "postgres_db"
+    image: "postgres:alpine3.14"
+    build:
+      context: .
+      dockerfile: ./Docker/Dockerfile_postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    # command: bash -c '/docker-entrypoint-initdb.d/init-db.sh'
+    ports:
+      - target: 5432
+        published: 5432
+        host_ip: 127.0.0.1
+    volumes:
+      - 'pgdata:/var/lib/postgresql/data'
+    
+volumes:
+  pgdata: {}
+
+# by default, all services in a docker compose file
+# are added to a docker stack on put into a shared network

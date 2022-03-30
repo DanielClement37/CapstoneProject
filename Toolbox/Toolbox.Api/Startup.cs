@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Toolbox.Api.Handlers;
 using Toolbox.Data;
+using Microsoft.IdentityModel.Logging;
 using Toolbox.Services.Interfaces;
 using Toolbox.Services.Services;
 
@@ -18,16 +19,16 @@ namespace Toolbox.Api
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            IdentityModelEventSource.ShowPII = true; //Add this line to see the details of errors
             services.AddCors();
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -38,7 +39,7 @@ namespace Toolbox.Api
             services.AddDbContext<ToolBoxDbContext>(opts =>
             {
                 opts.EnableDetailedErrors();
-                opts.UseNpgsql(Configuration.GetConnectionString("toolbox.dev"));
+                opts.UseNpgsql(Configuration.GetConnectionString("toolbox"));
             });
             
             var domain = $"https://{Configuration["Auth0:Domain"]}/";
@@ -48,11 +49,13 @@ namespace Toolbox.Api
                 {
                     options.Authority = domain;
                     options.Audience = Configuration["Auth0:Audience"];
+                    options.RequireHttpsMetadata = false;
                     // If the access token does not have a `sub` claim, `User.Identity.Name` will be `null`. Map it to a different claim by setting the NameClaimType below.
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         NameClaimType = ClaimTypes.NameIdentifier
                     };
+
                 });
             
             services.AddAuthorization(options =>    //TODO: add more policies for auth stuff
@@ -85,7 +88,7 @@ namespace Toolbox.Api
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
+            app.UseRouting(); 
 
             app.UseAuthentication();
             app.UseAuthorization();
