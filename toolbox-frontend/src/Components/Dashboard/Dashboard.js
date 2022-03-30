@@ -1,5 +1,5 @@
 import './Dashboard.css'
-import Modal from '../Modal/AddClassModal'
+import AddClassModal from '../Modal/AddClassModal'
 
  export default function Dashboard() {
    return (
@@ -27,9 +27,7 @@ import Modal from '../Modal/AddClassModal'
                <span><br />CSCE3530.002</span>
              </div>
            </div>
-           <Modal>
-                name="AddClassModal";
-           </Modal>
+           <AddClassModal/>
          </div>
        </div>
      </div>

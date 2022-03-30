@@ -60,7 +60,7 @@
      margin-right: 2vw;
      margin-bottom: 4vw;
      border-radius: 3vh;
-     margin-top: 0vh;
+     margin-top: 2.5vh;
      overflow: hidden;
      box-shadow: .5vh .5vh 1vh lightslategray;
      -webkit-transition: 0.3s;
@@ -95,12 +95,12 @@
  }
 
  .Add-class-box {
-     display: relative;
+     position: relative;
      float: left;
      background-color: lightgrey;
      color: white;
-     width: 20vh;
-     height: 20vh;
+     width: 25vh;
+     height: 25vh;
      margin-left: 2vw;
      margin-right: 2vw;
      margin-bottom: 2vw;
@@ -117,3 +117,34 @@
      -webkit-transform: scale(0.9);
      transform: scale(0.9);
  }
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-container {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #226900;
+    color: white;
+}
+
+input {
+    width: 100%;
+}

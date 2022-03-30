@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, Modal } from "react";
+//import * as React from 'react';
 import "../Dashboard/Dashboard.css";
-import { Button, Header, Modal, Form } from "semantic-ui-react";
 import axios from "axios";
-import "semantic-ui-css/semantic.min.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function AddClassModal() {
+
+
   const [open, setIsOpen] = useState(false);
   const [className, setClassName] = useState("");
 
@@ -39,35 +40,26 @@ function AddClassModal() {
     setClassName("");
   };
   return (
-    <Modal
-      onClose={() => setIsOpen(false)}
-      onOpen={() => setIsOpen(true)}
-      open={open}
-      trigger={<button className="Add-class-box">+</button>}
-    >
-      <Modal.Header>Add A Class</Modal.Header>
-      <Modal.Content>
-        <Modal.Description>
-          <Header>Enter Class Name</Header>
-          <Form>
-            <Form.Field>
-              <label>Class Name</label>
-              <input
-                placeholder="Class Name"
-                value={className}
-                onChange={(e) => setClassName(e.target.value)}
-              />
-            </Form.Field>
-          </Form>
-        </Modal.Description>
-      </Modal.Content>
-      <Modal.Actions>
-        <Button color="green" onClick={() => AddClass()}>
-          Submit
-        </Button>
-      </Modal.Actions>
-    </Modal>
-  );
+<>
+  <button className="Add-class-box">+</button>
+  <div className="modal">
+    <div className="modal-container">
+        <div className="modal-header">
+            <h1><span>Add a Class</span></h1>
+        </div>
+        <form>
+            <label htmlFor="className">Class Name</label>
+            <input type="text" id="className" className="className"/>
+            <button color="green" onClick={() => AddClass()}>
+                Submit
+            </button>
+        </form>
+    </div>
+  </div>
+</>
+
+    );
 }
 
 export default AddClassModal;
+
