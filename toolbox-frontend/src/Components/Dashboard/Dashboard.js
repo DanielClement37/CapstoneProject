@@ -27,7 +27,7 @@ import AddClassModal from '../Modal/AddClassModal'
                <span><br />CSCE3530.002</span>
              </div>
            </div>
-           <AddClassModal/>
+           <AddClassModal isOpen={false}/>
          </div>
        </div>
      </div>

@@ -1,13 +1,15 @@
-import React, { useState, Modal } from "react";
+import React, { useState, Component } from "react";
 //import * as React from 'react';
 import "../Dashboard/Dashboard.css";
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 
-function AddClassModal() {
 
 
-  const [open, setIsOpen] = useState(false);
+function AddClassModal(props){
+
+    let isOpen = props.isOpen;
+//  const [open, setIsOpen] = useState(true);
   const [className, setClassName] = useState("");
 
   const { user, getAccessTokenSilently } = useAuth0();
@@ -36,29 +38,34 @@ function AddClassModal() {
         console.error("Something went wrong!", error);
       });
 
-    setIsOpen(false);
+    isOpen=true;
     setClassName("");
   };
-  return (
-<>
-  <button className="Add-class-box">+</button>
-  <div className="modal">
-    <div className="modal-container">
-        <div className="modal-header">
-            <h1><span>Add a Class</span></h1>
-        </div>
-        <form>
-            <label htmlFor="className">Class Name</label>
-            <input type="text" id="className" className="className"/>
-            <button color="green" onClick={() => AddClass()}>
-                Submit
-            </button>
-        </form>
-    </div>
-  </div>
-</>
+    return (
+     <>
+     <button className="Add-class-box"onClick={isOpen=true}>+</button>
+        {isOpen ?
+        <>
+                <div className="modal">
+                    <div className="modal-container">
+                        <div className="modal-header">
+                            <h1><span>Add a Class</span></h1>
+                        </div>
+                        <form>
+                            <label htmlFor="className">Class Name</label>
+                            <input type="text" id="className" className="className"/>
+                            <button color="green" onClick={() => AddClass()}>
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+           </>
+           : <div /> }
+        </>
 
     );
+
 }
 
 export default AddClassModal;
