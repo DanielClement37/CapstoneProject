@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
+import '../App/App.css'
 
 export default function Landing() {
   // set up authentication for user and redirect for dashboard
@@ -26,9 +27,9 @@ export default function Landing() {
             <button className="Login-button" onClick={() => loginWithRedirect({appState: { targetUrl: "/dashboard" }})}>
               Login
             </button>
-            <h2>
+            <h3>
               <span>created by</span>
-            </h2>
+            </h3>
             <div className="Media-buttons">
               <span className="Login-subtext">Daniel Clement</span>
               <span className="Login-subtext">Isabel Wells</span>

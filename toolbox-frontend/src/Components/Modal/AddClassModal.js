@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Dashboard/Dashboard.css";
 import { Button, Header, Modal, Form } from "semantic-ui-react";
 import axios from "axios";
-import "semantic-ui-css/semantic.min.css";
+//import "semantic-ui-css/semantic.min.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function AddClassModal() {

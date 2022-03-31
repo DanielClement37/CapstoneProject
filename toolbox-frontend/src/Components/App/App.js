@@ -4,6 +4,7 @@ import CustomRouter from '../CustomRouter/CustomRouter';
 import Loading from '../Loading/Loading';
 import Landing from '../Landing/Landing';
 import Dashboard from '../Dashboard/Dashboard';
+import ClassDashboard from '../ClassDashboard/ClassDashboard'
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "../../Utils/history"
 
@@ -26,6 +27,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/classdashboard" element={<ClassDashboard/>}/>
           </Routes>
       </div>
     </CustomRouter>
