@@ -1,5 +1,6 @@
 FROM mcr.microsoft.com/dotnet/aspnet:5.0-focal AS base
 WORKDIR /app
+# Expose ports for http, api, and IIS
 EXPOSE 5000
 
 ENV ASPNETCORE_URLS=http://+:5000

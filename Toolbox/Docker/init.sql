@@ -1,19 +1,22 @@
-\c postgres;
+/* Back up file to upload tables in case of emergencies */
 CREATE TABLE IF NOT EXISTS "Classrooms" (
-    "ClassId" UUID PRIMARY KEY,
-    "ClassName" VARCHAR(255) NOT NULL,
-    "TeacherId" VARCHAR(255) NOT NULL,
-    "CreatedAt" TIMESTAMP NOT NULL DEFAULT NOW(),
-    "UpdatedAt" TIMESTAMP NOT NULL DEFAULT NOW()
+    "ClassId" UUID,
+    "ClassName" VARCHAR(255),
+    "TeacherId" VARCHAR(255),
+    "CreatedAt" TIMESTAMP without time zone NOT NULL DEFAULT NOW(),
+    "UpdatedAt" TIMESTAMP without time zone NOT NULL DEFAULT NOW(),
+    INDEX "PK_Classrooms" PRIMARY KEY, btree ("ClassId") 
 );
 CREATE TABLE IF NOT EXISTS "Students" (
-    "StudentId" UUID PRIMARY KEY,
-    "FirstName" VARCHAR(255) NOT NULL,
-    "LastName" VARCHAR(255) NOT NULL,
-    "Gender" INTEGER NOT NULL,
+    "StudentId" UUID,
+    "FirstName" VARCHAR(255),
+    "LastName" VARCHAR(255),
+    "Gender" INTEGER,
     "ClassroomId" UUID NOT NULL,
     "IsPresent" BOOLEAN NOT NULL,
-    "CreatedAt" TIMESTAMP NOT NULL DEFAULT NOW(),
-    "UpdatedAt" TIMESTAMP NOT NULL DEFAULT NOW(),
-    CONSTRAINT fk_classrooms_class FOREIGN KEY ("ClassroomId") REFERENCES "Classrooms"("ClassId")
+    "CreatedAt" TIMESTAMP without time zone NOT NULL DEFAULT NOW(),
+    "UpdatedAt" TIMESTAMP without time zone NOT NULL DEFAULT NOW(),
+    INDEX "PK_Students" PRIMARY KEY, btree ("StudentId"),
+    INDEX "IX_Students_ClassroomId" btree ("ClassroomId"),
+    CONSTRAINT "FK_Students_Classrooms_ClassroomId" FOREIGN KEY ("ClassroomId") REFERENCES "Classrooms"("ClassId") ON DELETE CASCADE
 );

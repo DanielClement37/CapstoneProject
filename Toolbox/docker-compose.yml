@@ -32,16 +32,12 @@ services:
     ports:
       - target: 5432
         published: 5432
-    volumes:
-      - 'pgdata:/var/lib/postgresql/data'
+    # volumes:
+    #  - 'pgdata:/var/lib/postgresql/data'
     network_mode: "host"
         
     
-volumes:
-  pgdata: {}
-
-networks:
-  network:
-    driver: bridge
+# volumes:
+#  pgdata: {}
 # by default, all services in a docker compose file
 # are added to a docker stack on put into a shared network
