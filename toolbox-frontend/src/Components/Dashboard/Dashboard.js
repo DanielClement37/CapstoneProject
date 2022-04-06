@@ -1,12 +1,13 @@
 import './Dashboard.css'
 import AddClassModal from '../Modal/AddClassModal'
-import React from "react";
+import React, { useState } from "react";
 //import Modal from '../Modal/AddClassModal'
 import { useNavigate } from "react-router-dom";
 
 
  export default function Dashboard() {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
    return (
      <div className="App">
@@ -33,7 +34,14 @@ import { useNavigate } from "react-router-dom";
                <span><br />CSCE3530.002</span>
              </div>
            </div>
-           <AddClassModal isOpen={false}/>
+           <button className="Add-class-box" onClick={() => setIsOpen(true)}>
+            +
+           </button>
+           <AddClassModal
+                open={isOpen}
+                onOpen={() => setIsOpen(true)}
+                onClose={() => setIsOpen(false)}
+           ></AddClassModal>
          </div>
        </div>
      </div>

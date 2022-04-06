@@ -7,9 +7,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 function AddClassModal(props){
 
-    let isOpen = props.isOpen;
-//  const [open, setIsOpen] = useState(true);
-  const [className, setClassName] = useState("");
+//    let isOpen = props.isOpen;
+//    const [isOpen, setIsOpen] = useState(false);
+    const [className, setClassName] = useState("");
 
   const { user, getAccessTokenSilently } = useAuth0();
 
@@ -36,23 +36,34 @@ function AddClassModal(props){
       .catch((error) => {
         console.error("Something went wrong!", error);
       });
-
-    isOpen=true;
+//
+//    isOpen=true;
+//const type = props.name;
+    if(!props.open) return null;
     setClassName("");
   };
+
     return (
      <>
-            <button className="Add-class-box"onClick={isOpen=true}>+</button>
-            {isOpen ?
-                <>
-                <div className="modal">
-                    <div>Add a Class</div>
-                </div>
-           </>
-           : <div /> }
-        </>
+        <div>
+            <button className="close" onClick={props.onClose}>
+                x
+            </button>
+            <div className="modal">
+                <div className="modal-header">Add Class</div>
+                <form>
+                    <input
+                        placeholder="Enter class name"
+                        value={className}
+                        onChange={(e) => setClassName(e.target.value)}
+                    />
+                </form>
+            </div>
+        </div>
+     </>
 
     );
+
 
 }
 
