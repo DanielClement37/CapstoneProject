@@ -46,10 +46,7 @@ function AddClassModal(props){
             {isOpen ?
                 <>
                 <div className="modal">
-                        <div className="modal-header">
-                            <h1><span>Add a Class</span></h1>
-                        </div>
-                        hello
+                    <div>Add a Class</div>
                 </div>
            </>
            : <div /> }
