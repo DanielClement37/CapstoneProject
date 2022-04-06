@@ -1,6 +1,5 @@
-import React, { useState, Component } from "react";
-//import * as React from 'react';
-import "../Dashboard/Dashboard.css";
+import React, { useState } from "react";
+import "./Modal.css";
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -43,22 +42,14 @@ function AddClassModal(props){
   };
     return (
      <>
-     <button className="Add-class-box"onClick={isOpen=true}>+</button>
-        {isOpen ?
-        <>
+            <button className="Add-class-box"onClick={isOpen=true}>+</button>
+            {isOpen ?
+                <>
                 <div className="modal">
-                    <div className="modal-container">
                         <div className="modal-header">
                             <h1><span>Add a Class</span></h1>
                         </div>
-                        <form>
-                            <label htmlFor="className">Class Name</label>
-                            <input type="text" id="className" className="className"/>
-                            <button color="green" onClick={() => AddClass()}>
-                                Submit
-                            </button>
-                        </form>
-                    </div>
+                        hello
                 </div>
            </>
            : <div /> }
