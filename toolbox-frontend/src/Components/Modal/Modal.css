@@ -1,0 +1,11 @@
+.modal {
+    position: absolute;
+    left: -28vw;
+    top: 10vh;
+    width: 35vw;
+   	height: 0vh;
+   	background-color: #ffff;
+   	z-index: 1;
+}
+
+
