@@ -4,6 +4,7 @@ import { Button, Header, Modal, Form } from "semantic-ui-react";
 import axios from "axios";
 //import "semantic-ui-css/semantic.min.css";
 import { useAuth0 } from "@auth0/auth0-react";
+import './AddClassModal.css';
 
 function AddClassModal() {
   const [open, setIsOpen] = useState(false);
@@ -48,19 +49,19 @@ function AddClassModal() {
   };
   return (
     <Modal
+      className='Add-modal'
       onClose={() => setIsOpen(false)}
       onOpen={() => setIsOpen(true)}
       open={open}
       trigger={<Button className="Add-class-box">+</Button>}
       style={inlineStyle.modal}
     >
-      <Modal.Header>Add A Class</Modal.Header>
+      <Modal.Header className = 'Add-header'>Add Class</Modal.Header>
       <Modal.Content>
         <Modal.Description>
-          <Header>Enter Class Name</Header>
+          <Header className = 'Add-text'>Enter Class Name</Header>
           <Form>
             <Form.Field>
-              <label>Class Name</label>
               <input
                 placeholder="Class Name"
                 value={className}
@@ -71,7 +72,7 @@ function AddClassModal() {
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
-        <Button color="green" onClick={() => AddClass()}>
+        <Button className = 'Add-button' onClick={() => AddClass()}>
           Submit
         </Button>
       </Modal.Actions>

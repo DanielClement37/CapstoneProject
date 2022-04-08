@@ -28,6 +28,7 @@
 }
 
 .Whiteboard {
+    outline: none;
     position: static;
     float: left;
     background-color: white;

@@ -34,6 +34,7 @@ export default function Landing() {
               <span className="Login-subtext">Daniel Clement</span>
               <span className="Login-subtext">Isabel Wells</span>
               <span className="Login-subtext">Sarah Wainwright</span>
+              <span className="Login-subtext">Jay Hagar</span>
             </div>
           </div>
       </div>
