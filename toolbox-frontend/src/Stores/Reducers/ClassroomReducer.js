@@ -1,7 +1,7 @@
 import { actionTypes } from "../actionTypes";
 
 export const initialState = {
-  classes: []
+  classes: [{}]
 };
 
 export const classroomReducer = (state = initialState, action) => {
