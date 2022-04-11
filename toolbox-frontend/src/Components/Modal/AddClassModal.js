@@ -23,9 +23,11 @@ function AddClassModal() {
   const AddClass = async () => {
     const token = await getAccessTokenSilently();
 
+    // http post that sends sql query to remote database
     axios
       .post(
-        "http://localhost:5000/api/classroom",      //TODO: make this an environment variable
+        // remote url: "http://52.202.123.156:5000/api/classroom"
+        "http://localhost:5000/api/classroom", //TODO: make this an environment variable
         {
           TeacherId: user.sub,
           ClassName: className,

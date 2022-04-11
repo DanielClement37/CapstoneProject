@@ -1,4 +1,4 @@
-/Toolbox/Toolbox.Api/appsettings.*
+# /Toolbox/Toolbox.Api/appsettings.*
 /Toolbox/.idea/*
 
 
@@ -97,6 +97,7 @@ ipch/
 *.vsp
 *.vspx
 *.sap
+.vscode/*
 
 # TFS 2012 Local Workspace
 $tf/
