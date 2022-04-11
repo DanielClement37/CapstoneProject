@@ -25,8 +25,9 @@ function AddClassModal() {
 
     // http post that sends sql query to remote database
     axios
-      .post( // current url for remote server
-        "http://52.202.123.156:5000/api/classroom", //TODO: make this an environment variable
+      .post(
+        // remote url: "http://52.202.123.156:5000/api/classroom"
+        "http://localhost:5000/api/classroom", //TODO: make this an environment variable
         {
           TeacherId: user.sub,
           ClassName: className,
