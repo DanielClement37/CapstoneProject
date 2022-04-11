@@ -1,0 +1,136 @@
+.Dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    color: #226900;
+}
+
+.Class-dashboard-header {
+    grid-area: 1 / 1 / 2 / 7;
+    text-align:center;
+    padding-left: 10vw;    
+    margin-top: 4vh;
+}
+
+.Whiteboard-container {
+    grid-area: 2 / 1 / 7 / 5;
+    /*padding-left: 2vh;*/
+    display: inline-block;
+    margin-right: 3vw;
+}
+
+.Button-container {
+    grid-area: 2 / 5 / 7 / 7;
+    display: inline-block;
+    margin-top: 3vh;
+}
+
+.Whiteboard {
+    outline: none;
+    position: static;
+    float: left;
+    background-color: white;
+    color: #226900;
+    font-size: 4vh;
+    text-align: top;
+    padding-left: 1vw;
+    border: 3px solid #226900;
+    z-index: 10;
+    width: 95%;
+    height: 10%;
+    padding-bottom:45%;
+    padding-top: 1vh;
+    margin-left: 4vw;
+    margin-right: 0vw;
+    margin-bottom: 0vw;
+    border-radius: 3vh;
+    margin-top: 3vh;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-word;
+    box-shadow: .5vh .5vh 1vh lightslategray;
+}
+
+input[type=text/css] {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+h2 {
+    width: 85%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 4vh;
+    border-bottom: 2px solid #226900;
+    line-height: 0.1em;
+    /*padding-top: 7.5vh;*/
+}
+
+h2 span {
+    background:#fff;
+    padding: 3%;
+}
+
+.Option-box {
+    position: relative;
+    float: left;
+    background-color: #226900;
+    color: white;
+    width: 23vh;
+    height: 23vh;
+    margin-left: 3vw;
+    margin-right: 0vw;
+    margin-bottom: 4vw;
+    border-radius: 3vh;
+    margin-top: 0vh;
+    overflow: hidden;
+    box-shadow: .5vh .5vh 1vh lightslategray;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.Option-box:active {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.Option-box:hover {
+    background-color: #245E16;
+}
+
+.Option-title {
+    position: relative;
+    width: 19vh;
+    height: 15vh;
+    margin-top: 17vh;
+    padding-right: 20vh;
+    background-color: white;
+    color: #226900;
+    font-size: 2.8vh;
+    line-height: 2.5vh;
+    text-align: center;
+    padding-left: 2vh;
+    padding-top: 1vh;
+
+}
+
+.Image-box {
+    height: 60%;
+    margin-left: -26%;
+    margin-right: 0vw;
+    margin-top: 1.5vh;
+    position: absolute;
+    align-self: center;
+}
+
+/*.Marker-box {             If we want to add a marker to the whiteboard
+    height: 16%;
+    float: right;
+    margin-left: 27%;
+    margin-right: 0vw;
+    margin-top: 27%;
+    position: fixed;
+}*/
