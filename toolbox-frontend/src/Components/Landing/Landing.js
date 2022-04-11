@@ -17,13 +17,14 @@ export default function Landing() {
     }
 
     checkUser(); // check user authentication upon landing on the page
-  }, [loginWithRedirect, isAuthenticated]);
+  }, [navigate, isAuthenticated]);
 
   // if user is not authenticated
   return ( // Landing page for app with login button
-     <div className="App-container">
+    <div className="App">
+      <div className="App-container">
           <div className="Login-container">
-            <div className="Login-header">Welcome Back to Teacher's Toolbox</div>
+            <div className="Login-header">Welcome Back to Teacher's Toolbox!</div>
             <button className="Login-button" onClick={() => loginWithRedirect({appState: { targetUrl: "/dashboard" }})}>
               Login
             </button>
@@ -38,5 +39,6 @@ export default function Landing() {
             </div>
           </div>
       </div>
+    </div>
   );
 }

@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Toolbox.Api.Handlers;
 using Toolbox.Data;
+using Microsoft.IdentityModel.Logging;
 using Toolbox.Services.Interfaces;
 using Toolbox.Services.Services;
 
@@ -18,27 +19,29 @@ namespace Toolbox.Api
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
+            // services.AddCors();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Toolbox.Api", Version = "v1" });
             });
+
+            // IdentityModelEventSource.ShowPII = true; //Add this line to see the details of errors
             
             services.AddDbContext<ToolBoxDbContext>(opts =>
             {
                 opts.EnableDetailedErrors();
-                opts.UseNpgsql(Configuration.GetConnectionString("toolbox.dev"));
+                // Jay-dev 2022/4/5: current connection string is modified to access remote server, so it will not work locally
+                opts.UseNpgsql(Configuration.GetConnectionString("toolbox"));
             });
             
             var domain = $"https://{Configuration["Auth0:Domain"]}/";
@@ -47,18 +50,21 @@ namespace Toolbox.Api
                 .AddJwtBearer(options =>
                 {
                     options.Authority = domain;
-                    options.Audience = Configuration["Auth0:Audience"];
-                    // If the access token does not have a `sub` claim, `User.Identity.Name` will be `null`. Map it to a different claim by setting the NameClaimType below.
+                    options.Audience = Configuration["Auth0:Audience"];                    // If the access token does not have a `sub` claim, `User.Identity.Name` will be `null`. Map it to a different claim by setting the NameClaimType below.
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         NameClaimType = ClaimTypes.NameIdentifier
                     };
+
                 });
             
             services.AddAuthorization(options =>    //TODO: add more policies for auth stuff
             {
                 options.AddPolicy("read:weather", policy => policy.Requirements.Add(new HasScopeRequirement("read:weather", domain)));
             });
+
+            // Add Health ceck for API requests
+            services.AddHealthChecks();
                 
             //Add Scoped Services here
             services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
@@ -83,9 +89,12 @@ namespace Toolbox.Api
                 .AllowAnyHeader()
             );
 
+            // Map health checks to /health in API
+            app.UseHealthChecks("/health");
+
             app.UseHttpsRedirection();
 
-            app.UseRouting();
+            app.UseRouting(); 
 
             app.UseAuthentication();
             app.UseAuthorization();
