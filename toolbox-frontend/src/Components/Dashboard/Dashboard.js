@@ -1,68 +1,42 @@
 import './Dashboard.css'
+import React from "react";
 import Modal from '../Modal/AddClassModal'
-import { useAuth0 } from "@auth0/auth0-react";
+import { useNavigate } from "react-router-dom";
 
  export default function Dashboard() {
+  const navigate = useNavigate();
 
-
-  const { logout } = useAuth0();
-
-
-  return (
-    <div className="App">
-      <div className="Dashboard-container">
-        <div className="Dashboard-header">
-          <h1>
-            <column>
-              <span>
-                Welcome back, Professor Ludi!
-              </span>
-            </column>
-            <column>
-              <button className="Media-button" onClick={() => logout({ redirect: '/'})}>Logout</button>
-            </column>
-          </h1>
-        </div>
-        <div className="Class-container">
-          <div className="Class-box">
-            <div className="Class-title">
-              Capstone 2021
-              <span><br />CSCE4901.001</span>
-            </div>
-          </div>
-          <div className="Class-box">
-            <div className="Class-title">
-              Algorithms Fall
-              <span><br />CSCE4110.003</span>
-            </div>
-          </div>
-          <div className="Class-box">
-            <div className="Class-title">
-              Networking
-              <span><br />CSCE3530.002</span>
-            </div>
-          </div>
-          <Modal>
-              name="ModalExampleModal";
-          </Modal>
-        </div>
-        <div className="Account-container">
-          <div className="Media-buttons">
-            <row>
-              <button className="Moving-button">Account</button>
-            </row>
-            <row>
-              <button className="Moving-button">Timer</button>
-            </row>
-            <row>
-              <button className="Moving-button">Rosters</button>
-            </row>
-            <row>
-              <button className="Moving-button">Agenda</button>
-            </row>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+   return (
+     <div className="App">
+       <div className="Dashboard-container">
+         <div className="Account-container"></div>
+         <div className="Dashboard-header">
+           <h1><span>Welcome back, Professor Ludi!</span></h1>
+         </div>
+         <div className="Class-container">
+           <div className="Class-box" onClick={() => navigate("/classdashboard")}>
+             <div className="Class-title">
+               Capstone 2021
+               <span><br />CSCE4901.001</span>
+             </div>
+           </div>
+           <div className="Class-box" onClick={() => navigate("/classdashboard")}>
+             <div className="Class-title">
+               Algorithms Fall
+               <span><br />CSCE4110.003</span>
+             </div>
+           </div>
+           <div className="Class-box" onClick={() => navigate("/classdashboard")}>
+             <div className="Class-title">
+               Networking
+               <span><br />CSCE3530.002</span>
+             </div>
+           </div>
+           <Modal>
+                name="AddClassModal";
+           </Modal>
+         </div>
+       </div>
+     </div>
+   );
  }
