@@ -1,18 +1,24 @@
 import React, { useState } from "react";
-import "./Modal.css";
+import "../Dashboard/Dashboard.css";
+import { Button, Header, Modal, Form } from "semantic-ui-react";
 import axios from "axios";
+//import "semantic-ui-css/semantic.min.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import './AddClassModal.css';
 
-
-
-function AddClassModal(props){
-
-//    let isOpen = props.isOpen;
-//    const [isOpen, setIsOpen] = useState(false);
-    const [className, setClassName] = useState("");
+function AddClassModal() {
+  const [open, setIsOpen] = useState(false);
+  const [className, setClassName] = useState("");
 
   const { user, getAccessTokenSilently } = useAuth0();
+
+  const inlineStyle = {
+    modal: {
+      marginTop: "0px !important",
+      marginLeft: "auto",
+      marginRight: "auto",
+    },
+  };
 
   const AddClass = async () => {
     const token = await getAccessTokenSilently();
@@ -39,37 +45,12 @@ function AddClassModal(props){
       .catch((error) => {
         console.error("Something went wrong!", error);
       });
-//
-//    isOpen=true;
-//const type = props.name;
-    if(!props.open) return null;
+
+
+    setIsOpen(false);
     setClassName("");
   };
-<<<<<<< HEAD
 
-    return (
-     <>
-        <div>
-            <button className="close" onClick={props.onClose}>
-                x
-            </button>
-            <div className="modal">
-                <div className="modal-header">Add Class</div>
-                <form>
-                    <input
-                        placeholder="Enter class name"
-                        value={className}
-                        onChange={(e) => setClassName(e.target.value)}
-                    />
-                </form>
-            </div>
-        </div>
-     </>
-
-    );
-
-
-=======
   return (
     <Modal
       className='Add-modal'
@@ -101,8 +82,6 @@ function AddClassModal(props){
       </Modal.Actions>
     </Modal>
   );
->>>>>>> 61479bea78c95ef1a4e361abcc0973bae99cee67
 }
 
 export default AddClassModal;
-

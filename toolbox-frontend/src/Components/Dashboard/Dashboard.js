@@ -7,6 +7,7 @@ import ClassButton from "../ClassButton/ClassButton";
 
 export default function Dashboard() {
   const [classes, setClasses] = useState([]);
+  const [className, setClassName] = useState("");
 
   const { user, getAccessTokenSilently } = useAuth0();
 
@@ -31,6 +32,31 @@ export default function Dashboard() {
         console.log(error);
       });
   };
+  const editClasses = async () => {
+      const token = await getAccessTokenSilently();
+      axios
+        .post(
+            "http://localhost:5000/api/classroom/${classroomId}",
+          {
+            TeacherId: user.sub,
+            ClassName: className,
+          },
+          {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then((response) => {
+          if (response.status === 200) {
+            setClasses(response?.data);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+        setClassName("");
+    };
 
   return (
     <div className="App">
