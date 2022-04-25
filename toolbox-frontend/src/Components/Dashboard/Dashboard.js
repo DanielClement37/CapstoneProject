@@ -17,7 +17,7 @@ export default function Dashboard() {
   const getClasses = async () => {
     const token = await getAccessTokenSilently();
     axios
-      .get(`http://localhost:5000/api/teacher/${user.sub}`, {
+      .get(`http://52.202.123.156/api/teacher/${user.sub}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
