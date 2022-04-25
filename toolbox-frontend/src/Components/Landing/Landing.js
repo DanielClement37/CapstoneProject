@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 import '../App/App.css'
@@ -9,7 +9,7 @@ export default function Landing() {
   const navigate = useNavigate();
 
   // React effect that checks user authentication (if they are logged in) then redirects if true
-  React.useEffect(() => {
+  useEffect(() => {
     async function checkUser() {
       if (isAuthenticated) {
         navigate("/dashboard");

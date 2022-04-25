@@ -1,10 +1,7 @@
 import { actionTypes } from "../actionTypes";
 
 export const initialState = {
-  className: "",
-  addClassModalOpen: false,
-  editClassModalOpen: false,
-  deleteClassModalOpen: false
+  classes: [{}]
 };
 
 export const classroomReducer = (state = initialState, action) => {
