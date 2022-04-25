@@ -1,0 +1,43 @@
+# file used to orchestrate the docker images to work in concert
+version: "3.9"
+
+services:
+  app: 
+    container_name: "toolbox"
+    image: "toolbox:latest"
+    build:
+      context: .Docker
+      dockerfile: Dockerfile
+    environment: 
+      DB_CONNECTION: "Server=postgres_db;Port=5432;Database=postgres;Username=postgres;Password=postgres"
+    ports:
+      - target: 5000
+        published: 5000
+    depends_on:
+      - "postgres_db"
+    network_mode: "host"
+    links:
+      - "postgres_db"
+
+  postgres_db:
+    container_name: "postgres_db"
+    image: "postgres:alpine3.14"
+    # build:
+    #  context: ./Docker
+    #  dockerfile: Dockerfile_postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - target: 5432
+        published: 5432
+    # volumes:
+    #  - 'pgdata:/var/lib/postgresql/data'
+    network_mode: "host"
+        
+    
+# volumes:
+#  pgdata: {}
+# by default, all services in a docker compose file
+# are added to a docker stack on put into a shared network

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 import '../App/App.css'
@@ -9,7 +9,7 @@ export default function Landing() {
   const navigate = useNavigate();
 
   // React effect that checks user authentication (if they are logged in) then redirects if true
-  React.useEffect(() => {
+  useEffect(() => {
     async function checkUser() {
       if (isAuthenticated) {
         navigate("/dashboard");
@@ -17,13 +17,14 @@ export default function Landing() {
     }
 
     checkUser(); // check user authentication upon landing on the page
-  }, [loginWithRedirect, isAuthenticated]);
+  }, [navigate, isAuthenticated]);
 
   // if user is not authenticated
   return ( // Landing page for app with login button
-     <div className="App-container">
+    <div className="App">
+      <div className="App-container">
           <div className="Login-container">
-            <div className="Login-header">Welcome Back to Teacher's Toolbox</div>
+            <div className="Login-header">Welcome Back to Teacher's Toolbox!</div>
             <button className="Login-button" onClick={() => loginWithRedirect({appState: { targetUrl: "/dashboard" }})}>
               Login
             </button>
@@ -34,8 +35,10 @@ export default function Landing() {
               <span className="Login-subtext">Daniel Clement</span>
               <span className="Login-subtext">Isabel Wells</span>
               <span className="Login-subtext">Sarah Wainwright</span>
+              <span className="Login-subtext">Jay Hagar</span>
             </div>
           </div>
       </div>
+    </div>
   );
 }
