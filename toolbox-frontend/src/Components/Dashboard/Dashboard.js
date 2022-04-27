@@ -1,13 +1,15 @@
 import "./Dashboard.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import Modal from "../Modal/AddClassModal";
 import ClassButton from "../ClassButton/ClassButton";
 
 export default function Dashboard() {
-  const [classes, setClasses] = useState([]);
-
+  const [classes, setClasses] = useState({
+    classList: [],
+  });
+  const [isLoading, setIsLoading] = useState(false);
   const { user, getAccessTokenSilently } = useAuth0();
 
   useEffect(() => {
@@ -21,8 +23,11 @@ export default function Dashboard() {
         })
         .then((response) => {
           if (response.status === 200) {
-            setClasses(response?.data);
-            console.log(response?.data);
+            let data = response?.data;
+            setClasses((prev) => ({
+              ...prev,
+              classList: data
+            }));
           }
         })
         .catch((error) => {
@@ -33,8 +38,9 @@ export default function Dashboard() {
     getClasses();
   }, 
   [
-    getAccessTokenSilently, 
-    user.sub,
+    classes.classList,
+    getAccessTokenSilently,
+    user.sub
   ]);
 
   return (
@@ -50,10 +56,9 @@ export default function Dashboard() {
         </div>
         <div className="Class-container">
           {
-            classes &&
-            classes.map((c) => <ClassButton key={c.classId} className={c.className} />)
+            classes.classList.map((c) => <ClassButton key={c.classId} className={c.className} />)
           }
-          <Modal>name="AddClassModal";</Modal>
+          <Modal >name="AddClassModal";</Modal>
         </div>
       </div>
     </div>
