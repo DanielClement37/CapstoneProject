@@ -23,7 +23,7 @@ function App() {
 
   return (
     <CustomRouter history={history}>
-      <div id="app" className="app">
+      <div id="app" className="App">
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/dashboard" element={<Dashboard />} />
