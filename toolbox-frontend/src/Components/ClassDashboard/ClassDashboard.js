@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { TextArea } from 'semantic-ui-react';
 import './ClassDashboard.css'
 //import Modal from '../Modal/AddClassModal'
