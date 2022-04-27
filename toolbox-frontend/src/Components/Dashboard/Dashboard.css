@@ -1,10 +1,10 @@
 .Dashboard-container {
+     height: inherit;
      display: grid;
      grid-template-columns: repeat(6, 1fr);
      grid-template-rows: repeat(6, 1fr);
-     grid-column-gap: 0px;
-     grid-row-gap: 0px;
      color: #226900;
+     overflow: hidden;
  }
 
  .Dashboard-header {
@@ -21,6 +21,7 @@
  }
 
  .Class-container {
+     width: 100%;
      grid-area: 2 / 1 / 7 / 6;
      padding-left: 2vh;
      display: inline-block;

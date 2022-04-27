@@ -9,7 +9,6 @@ export default function Dashboard() {
   const [classes, setClasses] = useState({
     classList: [],
   });
-  const [isLoading, setIsLoading] = useState(false);
   const { user, getAccessTokenSilently } = useAuth0();
 
   useEffect(() => {
@@ -44,7 +43,7 @@ export default function Dashboard() {
   ]);
 
   return (
-    <div className="App">
+    <>
       <div className="Dashboard-container">
         <div className="Account-container">
           <div className="Account-bar"></div>
@@ -61,6 +60,6 @@ export default function Dashboard() {
           <Modal >name="AddClassModal";</Modal>
         </div>
       </div>
-    </div>
+    </>
   );
 }
