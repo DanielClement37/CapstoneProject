@@ -142,3 +142,18 @@
  .Add-class-box:hover {
     background-color: grey;
 }
+
+.logout-button {
+      display: block;
+      width: 100%;
+      border: #226900;
+      background-color: white;
+      padding: 14px 28px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 1vh;
+      margin-top: 2vw;
+      margin-left: .5vw;
+      margin-right: 2vw;
+}

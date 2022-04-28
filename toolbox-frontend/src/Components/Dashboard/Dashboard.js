@@ -1,5 +1,6 @@
 import "./Dashboard.css";
 import React, { useState, useEffect} from "react";
+import { Button } from "semantic-ui-react"
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import Modal from "../Modal/AddClassModal";
@@ -17,7 +18,7 @@ export default function Dashboard() {
     const getClasses = async () => {
       const token = await getAccessTokenSilently();
       axios
-        .get(`http://52.202.123.156:5000/api/teacher/${user.sub}`, {
+        .get(`http:localhost:5000/api/teacher/${user.sub}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -48,7 +49,11 @@ export default function Dashboard() {
     <div className="App">
       <div className="Dashboard-container">
         <div className="Account-container">
-          <div className="Account-bar"></div>
+          <div className="Account-bar">
+            <Button className = 'logout-button' >
+                LogOut
+            </Button>
+          </div>
         </div>
         <div className="Dashboard-header">
           <h1>
