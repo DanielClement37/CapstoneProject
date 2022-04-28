@@ -41,7 +41,7 @@ namespace Toolbox.Api.Controllers
             await _classroomService.AddClassAsync(classroom);
             
             _logger.Log(LogLevel.Information,"Classroom Created ");
-            return Ok();
+            return Ok(classroom);
         }
         
         [Authorize]
