@@ -5,31 +5,27 @@ import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import Modal from "../Modal/AddClassModal";
 import ClassButton from "../ClassButton/ClassButton";
+import { useStore } from "../../Stores/Contexts/Store";
+import { actionTypes } from "../../Stores/actionTypes";
 
 export default function Dashboard() {
 
-  const [classes, setClasses] = useState({
-    classList: [],
-  });
-  const [isLoading, setIsLoading] = useState(false);
   const { user, getAccessTokenSilently } = useAuth0();
+  const [state, dispatch] = useStore();
+  const { classList } = state;
 
-  useEffect(() => {
+  useEffect(()=>{
     const getClasses = async () => {
       const token = await getAccessTokenSilently();
       axios
-        .get(`http://52.202.123.156:5000/api/teacher/${user.sub}`, {
+        .get(`http://localhost:5000/api/teacher/${user.sub}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         })
         .then((response) => {
           if (response.status === 200) {
-            let data = response?.data;
-            setClasses((prev) => ({
-              ...prev,
-              classList: data
-            }));
+            dispatch({type: actionTypes.GET_CLASSES, payload:response.data});
           }
         })
         .catch((error) => {
@@ -38,12 +34,7 @@ export default function Dashboard() {
     };
 
     getClasses();
-  }, 
-  [
-    classes.classList,
-    getAccessTokenSilently,
-    user.sub
-  ]);
+  }, []);
 
   return (
     <div className="App">
@@ -62,7 +53,7 @@ export default function Dashboard() {
         </div>
         <div className="Class-container">
           {
-            classes.classList.map((c) => <ClassButton key={c.classId} className={c.className} />)
+            classList.map((c) => <ClassButton key={c.classId} className={c.className} />)
           }
           <Modal >name="AddClassModal";</Modal>
         </div>
