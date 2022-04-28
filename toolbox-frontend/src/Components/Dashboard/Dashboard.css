@@ -1,6 +1,7 @@
 .Dashboard-container {
      height: inherit;
      display: grid;
+     height: inherit;
      grid-template-columns: repeat(6, 1fr);
      grid-template-rows: repeat(6, 1fr);
      color: #226900;

@@ -5,6 +5,11 @@ import App from "./Components/App/App";
 import { Auth0Provider } from "@auth0/auth0-react";
 import history from "./Utils/history";
 import { getConfig } from "./Utils/config";
+import { StoreProvider } from "./Stores/Contexts/Store";
+import {
+  initialState,
+  classroomReducer,
+} from "./Stores/Reducers/ClassroomReducer";
 
 const onRedirectCallback = (appState) => {
   history.push(
@@ -25,8 +30,10 @@ const providerConfig = {
 };
 
 ReactDOM.render(
+  <StoreProvider initialState={initialState} reducer={classroomReducer}>
     <Auth0Provider {...providerConfig}>
       <App />
-    </Auth0Provider>,
+    </Auth0Provider>
+  </StoreProvider>,
   document.getElementById("root")
 );
