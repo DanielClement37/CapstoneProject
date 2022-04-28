@@ -28,7 +28,7 @@ function AddClassModal() {
       .post(
         // remote url: "http://52.202.123.156:5000/api/classroom"
         // local testing: "http://localhost:5000/api/classroom"
-        "http://localhost:5000/api/classroom", //TODO: make this an environment variable
+        "http://52.202.123.156:5000/api/classroom", //TODO: make this an environment variable
         {
           TeacherId: user.sub,
           ClassName: className,

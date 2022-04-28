@@ -157,3 +157,12 @@
       margin-left: .5vw;
       margin-right: 2vw;
 }
+.Class-option {
+      position: absolute;
+      float: right;
+      color: white;
+      font-size: 3vh;
+      margin-left: 27%;
+      margin-top: .5vh;
+
+  }
