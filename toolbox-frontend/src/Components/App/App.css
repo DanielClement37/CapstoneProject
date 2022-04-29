@@ -119,10 +119,10 @@ h3 span {
 }
 
 .Media-buttons {
-  display: grid; 
+  display: inline-block; 
   width: 100%;
   margin-top: 1%;
-  margin-left: 0vw;;
+  margin-left: 0vw;
   margin-right: 1vw;
 }
 
@@ -144,9 +144,6 @@ h3 span {
 
 .Login-subtext {
   text-align: center;
-  overflow: visible;
-  font-size: smaller;
-  margin-top: 1%;
   width: 22%;
   margin-left: 3%;
   margin-right: 3%;
