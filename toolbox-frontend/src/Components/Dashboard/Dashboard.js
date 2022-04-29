@@ -1,5 +1,6 @@
 import "./Dashboard.css";
 import React, { useState, useEffect} from "react";
+import { Button } from "semantic-ui-react"
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import Modal from "../Modal/AddClassModal";
@@ -39,7 +40,11 @@ export default function Dashboard() {
     <>
       <div className="Dashboard-container">
         <div className="Account-container">
-          <div className="Account-bar"></div>
+          <div className="Account-bar">
+            <Button className = 'logout-button' >
+                LogOut
+            </Button>
+          </div>
         </div>
         <div className="Dashboard-header">
           <h1>
@@ -56,3 +61,4 @@ export default function Dashboard() {
     </>
   );
 }
+

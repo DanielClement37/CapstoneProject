@@ -62,9 +62,43 @@ function AddClassModal(props) {
         console.error("Something went wrong!", error);
       });
 
+
     setIsOpen(false);
     setClassName("");
   };
+
+  return (
+    <Modal
+      className='Add-modal'
+      onClose={() => setIsOpen(false)}
+      onOpen={() => setIsOpen(true)}
+      open={open}
+      trigger={<Button className="Add-class-box">+</Button>}
+      style={inlineStyle.modal}
+    >
+      <Modal.Header className = 'Add-header'>Add Class</Modal.Header>
+      <Modal.Content>
+        <Modal.Description>
+          <Header className = 'Add-text'>Enter Class Name</Header>
+          <Form>
+            <Form.Field>
+              <input
+                placeholder="Class Name"
+                value={className}
+                onChange={(e) => setClassName(e.target.value)}
+              />
+            </Form.Field>
+          </Form>
+        </Modal.Description>
+      </Modal.Content>
+      <Modal.Actions>
+        <Button className = 'Add-button' onClick={() => AddClass()}>
+          Submit
+        </Button>
+      </Modal.Actions>
+    </Modal>
+  );
+}
 
   if (type === "AddClassModal") {
     return (
