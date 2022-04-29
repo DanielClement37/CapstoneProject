@@ -1,11 +1,9 @@
 .Dashboard-container {
-     height: inherit;
+     height: 100%;
      display: grid;
-     height: inherit;
      grid-template-columns: repeat(6, 1fr);
      grid-template-rows: repeat(6, 1fr);
      color: #226900;
-     overflow: hidden;
  }
 
  .Dashboard-header {
@@ -21,17 +19,16 @@
      width: 100%;
      grid-area: 2 / 1 / 7 / 6;
      padding-left: 2vh;
-     display: inline-block;
- }
+     display: block;
+  }
 
  .Account-container {
-     grid-area: 1 / 6 / 7 / 7;
+     display: flex;
+     justify-self: right;
      background-color: #226000;
-     width: 50%;
+     width: 5rem;
      height: 100%;
-     position: static;
-     margin-right: 0;
-     margin-left: auto;
+     position: fixed;
      -webkit-transition: 0.3s;
      -moz-transition: 0.3s;
      transition: 0.3s;
@@ -39,8 +36,7 @@
  }
 
  .Account-container:hover {
-     width: 100%;
-     opacity: 1;
+     width: 10rem;
      background-color: #226900;
  }
 
@@ -91,6 +87,7 @@
 
 .Class-box:hover {
     background-color: #245E16;
+    box-shadow: .5vh .5vh 1vh slategray;
 }
 
  .Class-box:active {

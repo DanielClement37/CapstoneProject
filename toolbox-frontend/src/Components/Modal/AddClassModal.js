@@ -42,7 +42,7 @@ function AddClassModal(props) {
       .post(
         // remote url: "http://52.202.123.156:5000/api/classroom"
         // local testing: "http://localhost:5000/api/classroom"
-        "http://localhost:5000/api/classroom", //TODO: make this an environment variable
+        "http://http://52.202.123.156:5000/api/classroom", //TODO: make this an environment variable
         {
           TeacherId: user.sub,
           ClassName: className,
@@ -55,7 +55,6 @@ function AddClassModal(props) {
       )
       .then((response) => {
         //const newClassList = classList.push(response.data);
-
         //dispatch({type: actionTypes.ADD_CLASS, payload:newClassList});
       })
       .catch((error) => {

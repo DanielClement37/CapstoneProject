@@ -18,14 +18,14 @@ export default function Dashboard() {
     const getClasses = async () => {
       const token = await getAccessTokenSilently();
       axios
-        .get(`http://localhost:5000/api/teacher/${user.sub}`, {
+        .get(`http://52.202.123.156:5000/api/teacher/${user.sub}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         })
         .then((response) => {
           if (response.status === 200) {
-            dispatch({type: actionTypes.GET_CLASSES, payload:response.data});
+            dispatch({ type: actionTypes.GET_CLASSES, payload: response.data });
           }
         })
         .catch((error) => {
@@ -57,6 +57,7 @@ export default function Dashboard() {
           }
           <Modal name="AddClassModal"></Modal>
         </div>
+        <div className="Account-container"></div>
       </div>
     </>
   );
