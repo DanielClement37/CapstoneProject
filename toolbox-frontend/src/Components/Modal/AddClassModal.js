@@ -42,7 +42,7 @@ function AddClassModal(props) {
       .post(
         // remote url: "http://52.202.123.156:5000/api/classroom"
         // local testing: "http://localhost:5000/api/classroom"
-        "http://http://52.202.123.156:5000/api/classroom", //TODO: make this an environment variable
+        "http://localhost:5000/api/classroom", //TODO: make this an environment variable
         {
           TeacherId: user.sub,
           ClassName: className,
@@ -55,49 +55,16 @@ function AddClassModal(props) {
       )
       .then((response) => {
         //const newClassList = classList.push(response.data);
+
         //dispatch({type: actionTypes.ADD_CLASS, payload:newClassList});
       })
       .catch((error) => {
         console.error("Something went wrong!", error);
       });
 
-
     setIsOpen(false);
     setClassName("");
   };
-
-  return (
-    <Modal
-      className='Add-modal'
-      onClose={() => setIsOpen(false)}
-      onOpen={() => setIsOpen(true)}
-      open={open}
-      trigger={<Button className="Add-class-box">+</Button>}
-      style={inlineStyle.modal}
-    >
-      <Modal.Header className = 'Add-header'>Add Class</Modal.Header>
-      <Modal.Content>
-        <Modal.Description>
-          <Header className = 'Add-text'>Enter Class Name</Header>
-          <Form>
-            <Form.Field>
-              <input
-                placeholder="Class Name"
-                value={className}
-                onChange={(e) => setClassName(e.target.value)}
-              />
-            </Form.Field>
-          </Form>
-        </Modal.Description>
-      </Modal.Content>
-      <Modal.Actions>
-        <Button className = 'Add-button' onClick={() => AddClass()}>
-          Submit
-        </Button>
-      </Modal.Actions>
-    </Modal>
-  );
-}
 
   if (type === "AddClassModal") {
     return (
@@ -140,7 +107,7 @@ function AddClassModal(props) {
         open={open2}
         trigger={
         <div className="Option-box">
-          <img src={Timer} className="Image-box" />
+          <img src={Timer} alt="" className="Image-box" />
           <div className="Option-title">Timer</div>
         </div>}
         style={inlineStyle.modal}
@@ -191,27 +158,40 @@ function AddClassModal(props) {
    } else if (type === "TutorialModal") {
     return (
       <Modal
-        className='Add-modal'
+        className="Add-modal"
         onClose={() => setIsOpen4(false)}
         onOpen={() => setIsOpen4(true)}
         open={open4}
-        trigger ={
+        trigger={
           <div className="Option-box">
-            <img src={Tutorial} className="Image-box"/>
+            <img src={Tutorial} alt="" className="Image-box" />
             <div className="Option-title">Tutorial</div>
-           </div>}
+          </div>
+        }
         style={inlineStyle.modal}
       >
-        <Modal.Header className='Tut-header'>Tutorial</Modal.Header>
+        <Modal.Header className="Tut-header">Tutorial</Modal.Header>
         <Modal.Content>
           <Modal.Description>
-            <div className="Tut-text">The large box on the left is the <b>Whiteboard</b>. Here, you can type instructions for the class to read from the board.</div>
-            <div className="Tut-text">The <b>Timer</b> button allows you to set and display a timer for things such as quizzes and tests.</div>
-            <div className="Tut-text">The <b>Students</b> button allows you too see the students in the class and sort them in groups.</div>
+            <div className="Tut-text">
+              The large box on the left is the <b>Whiteboard</b>. Here, you can
+              type instructions for the class to read from the board.
+            </div>
+            <div className="Tut-text">
+              The <b>Timer</b> button allows you to set and display a timer for
+              things such as quizzes and tests.
+            </div>
+            <div className="Tut-text">
+              The <b>Students</b> button allows you too see the students in the
+              class and sort them in groups.
+            </div>
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
-          <Button className='Add-button Close-button' onClick={() => setIsOpen4(false)}>
+          <Button
+            className="Add-button Close-button"
+            onClick={() => setIsOpen4(false)}
+          >
             Close
           </Button>
         </Modal.Actions>
@@ -220,36 +200,40 @@ function AddClassModal(props) {
    } else if (type === "StudentModal") {
     return (
       <Modal
-        className='Add-modal'
+        className="Add-modal"
         onClose={() => setIsOpen5(false)}
         onOpen={() => setIsOpen5(true)}
         open={open5}
-        trigger ={
+        trigger={
           <div className="Option-box">
-            <img src={Students} className="Image-box"/>
+            <img src={Students} alt="" className="Image-box" />
             <div className="Option-title">Students</div>
-          </div>}
+          </div>
+        }
         style={inlineStyle.modal}
       >
-        <Modal.Header className='Tut-header'>Students</Modal.Header>
+        <Modal.Header className="Tut-header">Students</Modal.Header>
         <Modal.Content>
           <Modal.Description>
             <div className="Body-container">
-              <div className="Tut-text">student :)</div>
-              <div className="Tut-text">student :)</div>
-              <div className="Tut-text">student :)</div>
-              <div className="Tut-text">student :)</div>
-              <div className="Tut-text">student :)</div>
-              <div className="Tut-text">student :)</div>
-              <div className="Tut-text">student :)</div>
-              <div className="Tut-text">student :)</div>
-              <div className="Tut-text">student :)</div>
-              <div className="Tut-text">student :)</div>
+              <div className="Tut-text">(student :)</div>
+              <div className="Tut-text">(student :)</div>
+              <div className="Tut-text">(student :)</div>
+              <div className="Tut-text">(student :)</div>
+              <div className="Tut-text">(student :)</div>
+              <div className="Tut-text">(student :)</div>
+              <div className="Tut-text">(student :)</div>
+              <div className="Tut-text">(student :)</div>
+              <div className="Tut-text">(student :)</div>
+              <div className="Tut-text">(student :)</div>
             </div>
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
-          <Button className='Add-button Close-button' onClick={() => setIsOpen5(false)}>
+          <Button
+            className="Add-button Close-button"
+            onClick={() => setIsOpen5(false)}
+          >
             Close
           </Button>
         </Modal.Actions>

@@ -40,11 +40,9 @@ export default function Dashboard() {
     <>
       <div className="Dashboard-container">
         <div className="Account-container">
-          <div className="Account-bar">
-            <Button className = 'logout-button' >
-                LogOut
-            </Button>
-          </div>
+          <Button className="Account-item">
+            <div className="logout-button">LogOut</div>
+          </Button>
         </div>
         <div className="Dashboard-header">
           <h1>
@@ -52,12 +50,11 @@ export default function Dashboard() {
           </h1>
         </div>
         <div className="Class-container">
-          {
-            classList.map((c) => <ClassButton key={c.classId} className={c.className} />)
-          }
+          {classList.map((c) => (
+            <ClassButton key={c.classId} className={c.className} />
+          ))}
           <Modal name="AddClassModal"></Modal>
         </div>
-        <div className="Account-container"></div>
       </div>
     </>
   );

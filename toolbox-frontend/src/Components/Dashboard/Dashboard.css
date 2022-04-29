@@ -24,7 +24,9 @@
 
  .Account-container {
      display: flex;
+     flex-direction: column;
      justify-self: right;
+     align-items: left;
      background-color: #226000;
      width: 5rem;
      height: 100%;
@@ -32,12 +34,21 @@
      -webkit-transition: 0.3s;
      -moz-transition: 0.3s;
      transition: 0.3s;
-     z-index: 11;
  }
 
  .Account-container:hover {
      width: 10rem;
      background-color: #226900;
+ }
+
+.Account-item {
+      height: 50px;
+      width: 122px;
+      margin-left: 10%;
+      margin-top: 10px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
  }
 
  h1 {
@@ -146,16 +157,16 @@
 }
 
 .logout-button {
-      display: block;
-      width: 100%;
-      border: #226900;
-      background-color: white;
-      padding: 14px 28px;
-      font-size: 16px;
-      cursor: pointer;
-      text-align: center;
-      border-radius: 1vh;
-      margin-top: 2vw;
-      margin-left: .5vw;
-      margin-right: 2vw;
+    display: block;
+    width: 62px;
+    height: 17px;
+    background-color: white;
+    color: #226900;
+    padding: 16px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 15px;
+    margin-left: -6px;
+    margin-top: -3px;
 }
