@@ -10,6 +10,8 @@
     background-color: white;
     padding-top: 2%;
     align-items: center;
+    font-size: 0;
+    text-align: center;
 }
 
 .Add-header {
@@ -18,6 +20,15 @@
     font-size: 4vh;
     color: #226900;
     margin-top: 3%;
+}
+
+.Add-timertxt {
+    display: inline;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10vh;
+    color: #226900;
+    z-index: 100;
 }
 
 .Add-text {
@@ -38,6 +49,33 @@
     margin-top: 1%;
 }
 
+.Tut-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 4vh;
+    color: #226900;
+    margin-top: 0%;
+}
+.Tut-text {
+    position: relative;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    margin-left: 4%;
+    margin-right: 4%;
+    color: #226900;
+    font-size: 2.5vh;
+    text-align: center;
+}
+
+.Body-container {
+    width: 90%;
+    height: 25vh;
+    margin-left: 5%;
+    border-bottom: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 input {
     font-size: 2.5vh;
     font-style: italic;
@@ -52,10 +90,39 @@ input {
     outline: none;
 }
 
+input[type=number] {
+    position: relative;
+    display: inline;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10vh;
+    color: #226900;
+    margin-top: 3%;
+    margin-right: 0vw;
+    margin-left: -.6vw;;
+    width: 7vw;
+    padding-right: none;
+    border: none;
+    height: 11vh;
+    -moz-appearance: textfield;
+    background: transparent;
+  }
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number]::placeholder {
+    color: #226900;
+}
+
 .Add-button {
     position: relative;
+    margin-left: 30%;
+    margin-right: 30%;
     align-self: center;
-    left: 44%;
     margin-top: 2%;
     font-size: 2.5vh;
     background-color: #226900;
@@ -70,6 +137,12 @@ input {
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     transition: 0.3s;
+}
+
+.Close-button {
+    background-color: transparent;
+    border: 2px solid #226900;
+    color: #226900;
 }
 
 .Add-button:hover {

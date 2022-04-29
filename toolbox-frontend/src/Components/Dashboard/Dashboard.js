@@ -50,7 +50,7 @@ export default function Dashboard() {
           {
             classList.map((c) => <ClassButton key={c.classId} className={c.className} />)
           }
-          <Modal >name="AddClassModal";</Modal>
+          <Modal name="AddClassModal"></Modal>
         </div>
       </div>
     </>
