@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Dashboard/Dashboard.css";
 import { Button, Header, Modal, Form } from "semantic-ui-react";
 import axios from "axios";
@@ -63,6 +63,7 @@ function AddClassModal(props) {
 
     setIsOpen(false);
     setClassName("");
+    dispatch({ type: actionTypes.ADD_CLASS});
   };
 
   if (type === "AddClassModal") {

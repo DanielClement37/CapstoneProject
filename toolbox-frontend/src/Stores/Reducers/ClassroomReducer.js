@@ -2,6 +2,7 @@ import { actionTypes } from "../actionTypes";
 
 export const initialState = {
   classList: [],
+  updated: false
 };
 
 export const classroomReducer = (state = initialState, action) => {
@@ -9,12 +10,13 @@ export const classroomReducer = (state = initialState, action) => {
     case actionTypes.ADD_CLASS:
       return {
         ...state,
-        classList: action.payload
+        updated: false
       };
     case actionTypes.GET_CLASSES:
       return{
         ...state,
-        classList: action.payload
+        classList: action.payload,
+        updated: true
       }
       default:
           break

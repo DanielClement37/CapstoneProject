@@ -7,12 +7,11 @@
  }
 
  .Dashboard-header {
-    /* edited grid area of header to connect
-       with the account sidebar. 
-       Overflow is added to avoid overlap*/
      grid-area: 1 / 1 / 2 / 6;
      overflow: hidden;
      margin-top: 2%;
+     width: 80vw;
+     line-height: 1rem;
  }
 
  .Class-container {

@@ -1,5 +1,5 @@
 import "./Dashboard.css";
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { Button } from "semantic-ui-react"
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -14,8 +14,9 @@ export default function Dashboard() {
   const { user, getAccessTokenSilently } = useAuth0();
 
   const [state, dispatch] = useStore();
-  const { classList } = state;
+  const { classList, updated } = state;
 
+  // set initial state and get initial classes from DB
   useEffect(()=>{
     const getClasses = async () => {
       const token = await getAccessTokenSilently();
@@ -35,8 +36,12 @@ export default function Dashboard() {
         });
     };
 
-    getClasses();
-  }, []);
+    if(!updated){
+      getClasses();
+    }
+  }, [updated]);
+
+
 
   return (
     <>
