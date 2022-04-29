@@ -1,5 +1,5 @@
 import "./Dashboard.css";
-import React, { useState, useEffect} from "react";
+import React, { useEffect} from "react";
 import { Button } from "semantic-ui-react"
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -10,7 +10,9 @@ import { actionTypes } from "../../Stores/actionTypes";
 
 export default function Dashboard() {
   
+  const { logout } = useAuth0();
   const { user, getAccessTokenSilently } = useAuth0();
+
   const [state, dispatch] = useStore();
   const { classList } = state;
 
@@ -40,7 +42,12 @@ export default function Dashboard() {
     <>
       <div className="Dashboard-container">
         <div className="Account-container">
-          <Button className="Account-item">
+          <Button
+            className="Account-item"
+            onClick={() =>
+              logout({ appState: { targetUrl: "/" } })
+            }
+          >
             <div className="logout-button">LogOut</div>
           </Button>
         </div>
