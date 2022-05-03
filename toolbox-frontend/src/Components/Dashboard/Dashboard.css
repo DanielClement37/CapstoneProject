@@ -1,68 +1,68 @@
 .Dashboard-container {
+     height: 100%;
      display: grid;
-     height: inherit;
      grid-template-columns: repeat(6, 1fr);
      grid-template-rows: repeat(6, 1fr);
-     grid-column-gap: 0px;
-     grid-row-gap: 0px;
      color: #226900;
  }
 
  .Dashboard-header {
-    /* edited grid area of header to connect
-       with the account sidebar. 
-       Overflow is added to avoid overlap*/
-     grid-area: 1 / 1 / 1 / -1;
-     height: 70%;
-     max-height: 90%;
-     margin-top: -3%;
-     margin-bottom: 6%;
-     border-bottom: 2px solid #226900;
+     grid-area: 1 / 1 / 2 / 6;
      overflow: hidden;
+     margin-top: 2%;
+     width: 80vw;
+     line-height: 1rem;
  }
 
  .Class-container {
+     width: 100%;
      grid-area: 2 / 1 / 7 / 6;
      padding-left: 2vh;
-     display: inline-block;
- }
+     display: block;
+  }
 
  .Account-container {
-     grid-area: 1 / 6 / 7 / 7;
+     display: flex;
+     flex-direction: column;
+     justify-self: right;
+     align-items: left;
      background-color: #226000;
-     width: 50%;
+     width: 9rem;
      height: 100%;
-     position: static;
-     margin-right: 0;
-     margin-left: auto;
+     position: fixed;
      -webkit-transition: 0.3s;
      -moz-transition: 0.3s;
      transition: 0.3s;
-     z-index: 11;
  }
 
  .Account-container:hover {
-     width: 100%;
-     opacity: 1;
+     width: 10rem;
      background-color: #226900;
  }
 
+.Account-item {
+      height: 50px;
+      width: 122px;
+      margin-left: 10%;
+      margin-top: 10px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+ }
+
  h1 {
-     width: 95%;
-     height: 80%;
-     text-size-adjust: 50%;
-     white-space: pre-line;
-     text-align: left;
-     font-weight: bold;
-     font-size: 4vh;
-     margin-top: 4%;
+    width: 97%;
+    text-align: left;
+    font-weight: bold;
+    font-size: 4vh;
+    border-bottom: 2px solid #226900;
+    line-height: 0.1em;
  }
 
  h1 span {
-     margin-right: 15vw;
-     line-height: 1em;
-     overflow: clip;
+
      padding: 3%;
+     background-color: white;
  }
 
  .Class-box {
@@ -84,8 +84,20 @@
      transition: 0.3s;
  }
 
+ .Class-option {
+     position: absolute;
+     float: right;
+     color: white;
+     font-size: 3vh;
+     margin-left: 27%;
+     margin-top: .5vh;
+     background-color: transparent ;
+     border: none;
+ }
+
 .Class-box:hover {
     background-color: #245E16;
+    box-shadow: .5vh .5vh 1vh slategray;
 }
 
  .Class-box:active {
@@ -145,17 +157,17 @@
 
 .logout-button {
       display: block;
-      width: 100%;
-      border: #226900;
+      width: 62px;
+      height: 17px;
       background-color: white;
-      padding: 14px 28px;
+      color: #226900;
+      padding: 16px 30px;
       font-size: 16px;
       cursor: pointer;
       text-align: center;
-      border-radius: 1vh;
-      margin-top: 2vw;
-      margin-left: .5vw;
-      margin-right: 2vw;
+      border-radius: 15px;
+      margin-left: -6px;
+      margin-top: -3px;
 }
 .Class-option {
       position: absolute;
@@ -166,3 +178,4 @@
       margin-top: .5vh;
 
   }
+
