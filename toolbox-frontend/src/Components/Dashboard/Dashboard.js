@@ -49,9 +49,7 @@ export default function Dashboard() {
         <div className="Account-container">
           <Button
             className="Account-item"
-            onClick={() =>
-              logout({ appState: { targetUrl: "/" } })
-            }
+            onClick={() => logout({ appState: { targetUrl: "/" } })}
           >
             <div className="logout-button">LogOut</div>
           </Button>
@@ -63,7 +61,11 @@ export default function Dashboard() {
         </div>
         <div className="Class-container">
           {classList.map((c) => (
-            <ClassButton key={c.classId} className={c.className} />
+            <ClassButton
+              key={c.classId}
+              classId={c.classId}
+              className={c.className}
+            />
           ))}
           <Modal name="AddClassModal"></Modal>
         </div>

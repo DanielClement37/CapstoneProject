@@ -28,6 +28,7 @@
     font-weight: bold;
     font-size: 10vh;
     color: #226900;
+    z-index: 100;
 }
 
 .Add-text {
@@ -89,6 +90,12 @@ input {
     outline: none;
 }
 
+input[type=checkbox] {
+    display: flex;
+    height: 30px;
+    width: 30px;
+}
+
 input[type=number] {
     position: relative;
     display: inline;
@@ -99,7 +106,7 @@ input[type=number] {
     margin-top: 3%;
     margin-right: 0vw;
     margin-left: -.6vw;;
-    width: 10vw;
+    width: 7vw;
     padding-right: none;
     border: none;
     height: 11vh;
@@ -117,58 +124,22 @@ input[type=number]::placeholder {
     color: #226900;
 }
 
-.Modal-button-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    position: relative;
-    margin-left: 10%;
-    margin-right: 10%;
-    align-self: center;
-    margin-top: 2%;
-    font-size: 2.5vh;
-    border-radius: .7vh;
-    height: 4.5vh;
-    text-align: center;
-    width: 90%;
-}
-
 .Add-button {
-    position: relative;
-    margin-left: 30%;
-    margin-right: 30%;
-    align-self: center;
-    margin-top: 2%;
-    font-size: 2.5vh;
-    background-color: #226900;
-    overflow: hidden;
-    border-radius: .7vh;
-    color: white;
-    font-weight: lighter;
-    border: 2px solid #226900;
-    height: 4.5vh;
-    text-align: center;
-    width: 12%;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    transition: 0.3s;
-}
-
-.Add-button-secondary {
     position: relative;
     margin-left: 20%;
     margin-right: 10%;
     align-self: center;
     margin-top: 3%;
-    font-size: 2vh;
+    font-size: 2.5vh;
     background-color: #226900;
     overflow: hidden;
     border-radius: .7vh;
     color: white;
     font-weight: lighter;
     border: 2px solid #226900;
-    height: 5vh;
+    height: 4.5vh;
     text-align: center;
-    width: 95px;
+    width: 85px;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     transition: 0.3s;
@@ -178,6 +149,21 @@ input[type=number]::placeholder {
     background-color: transparent;
     border: 2px solid #226900;
     color: #226900;
+    position: relative;
+    align-self: center;
+    margin-top: 3%;
+    margin-left: 10%;
+    margin-right: 20%;
+    font-size: 2.5vh;
+    overflow: hidden;
+    border-radius: .7vh;
+    font-weight: lighter;
+    height: 4.5vh;
+    text-align: center;
+    width: 85px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
 }
 
 .Add-button:hover {
@@ -191,3 +177,30 @@ input[type=number]::placeholder {
     /*width: 7vh;                                     <---- Turns the login button kinda into a circle on click
     color: rgba(0, 0, 0, 0);*/
   }
+
+label {
+    font-size: 1rem;
+    font-weight: lighter;
+    color: black;
+}
+
+.checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: left;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.checkbox-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

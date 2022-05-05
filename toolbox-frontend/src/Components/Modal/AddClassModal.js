@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "../Dashboard/Dashboard.css";
+import "./AddClassModal.css";
+import StudentModal from "../Modal/AddStudentModal";
 import { Button, Header, Modal, Form } from "semantic-ui-react";
 import axios from "axios";
 //import "semantic-ui-css/semantic.min.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useStore } from "../../Stores/Contexts/Store";
 import { actionTypes } from "../../Stores/actionTypes";
-import './AddClassModal.css';
 import Timer from '../../Images/timer.png'
 import Students from '../../Images/students.png'
 import Tutorial from '../../Images/tutorial.png'
+import AddStudentModal from "../Modal/AddStudentModal";
 
 function AddClassModal(props) {
   const [open, setIsOpen] = useState(false);
@@ -20,7 +22,7 @@ function AddClassModal(props) {
 
   const [className, setClassName] = useState("");
   const [state, dispatch] = useStore();
-  const { classList } = state;
+  const { studentList, currentClass, updated } = state;
 
   const type = props.name;
 
@@ -101,28 +103,42 @@ function AddClassModal(props) {
   } else if (type === "TimerModal") {
     return (
       <Modal
-        className='Add-modal'
+        className="Add-modal"
         onClose={() => setIsOpen2(false)}
         onOpen={() => setIsOpen2(true)}
         open={open2}
         trigger={
-        <div className="Option-box">
-          <img src={Timer} alt="" className="Image-box" />
-          <div className="Option-title">Timer</div>
-        </div>}
+          <div className="Option-box">
+            <img src={Timer} alt="" className="Image-box" />
+            <div className="Option-title">Timer</div>
+          </div>
+        }
         style={inlineStyle.modal}
       >
-        <Modal.Header className='Add-header'>Timer</Modal.Header>
+        <Modal.Header className="Add-header">Timer</Modal.Header>
         <Modal.Content>
           <Modal.Description>
-            <input type="number" className='Add-timertxt' placeholder='00'></input>
-            <div className='Add-timertxt'>:</div>
-            <input type="number" className='Add-timertxt' placeholder='00'></input>
+            <input
+              type="number"
+              className="Add-timertxt"
+              placeholder="00"
+            ></input>
+            <div className="Add-timertxt">:</div>
+            <input
+              type="number"
+              className="Add-timertxt"
+              placeholder="00"
+            ></input>
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
-        <Button className="Add-button" onClick={() => setIsOpen3(true)}>Start</Button>
-          <Button className='Add-button Close-button' onClick={() => setIsOpen2(false)}>
+          <Button className="Add-button" onClick={() => setIsOpen3(true)}>
+            Start
+          </Button>
+          <Button
+            className="Add-button Close-button"
+            onClick={() => setIsOpen2(false)}
+          >
             Close
           </Button>
         </Modal.Actions>
@@ -131,25 +147,36 @@ function AddClassModal(props) {
   } else if (type === "TimeModal") {
     return (
       <Modal
-        className='Add-modal'
+        className="Add-modal"
         onClose={() => setIsOpen3(false)}
         onOpen={() => setIsOpen3(true)}
         open={open3}
         style={inlineStyle.modal}
       >
-        <Modal.Header className='Add-header'>Timer 2</Modal.Header>
+        <Modal.Header className="Add-header">Timer 2</Modal.Header>
         <Modal.Content>
           <Modal.Description>
-            <input type="number" className='Add-timertxt' placeholder='00'></input>
-            <div className='Add-timertxt'>:</div>
-            <input type="number" className='Add-timertxt' placeholder='00'></input>
+            <input
+              type="number"
+              className="Add-timertxt"
+              placeholder="00"
+            ></input>
+            <div className="Add-timertxt">:</div>
+            <input
+              type="number"
+              className="Add-timertxt"
+              placeholder="00"
+            ></input>
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
-          <Button className='Add-button' onClick={() => setIsOpen3(false)}>
+          <Button className="Add-button" onClick={() => setIsOpen3(false)}>
             Start
           </Button>
-          <Button className='Add-button Close-button' onClick={() => setIsOpen3(false)}>
+          <Button
+            className="Add-button Close-button"
+            onClick={() => setIsOpen3(false)}
+          >
             Close
           </Button>
         </Modal.Actions>
@@ -216,6 +243,11 @@ function AddClassModal(props) {
         <Modal.Content>
           <Modal.Description>
             <div className="Body-container">
+              {studentList.map((s) => (
+                <div className="Tut-text">
+                  {s.lastName +", "+ s.firstName}
+                </div>
+              ))}
               <div className="Tut-text">(student :)</div>
               <div className="Tut-text">(student :)</div>
               <div className="Tut-text">(student :)</div>
@@ -229,13 +261,13 @@ function AddClassModal(props) {
             </div>
           </Modal.Description>
         </Modal.Content>
-        <Modal.Actions>
-          <Button
-            className="Add-button Close-button"
-            onClick={() => setIsOpen5(false)}
-          >
+        <Modal.Actions className="Modal-button-container">
+          <Button className="Close-button" onClick={() => setIsOpen5(false)}>
             Close
           </Button>
+          <AddStudentModal onClose={() => setIsOpen5(false)}>
+            Add Student
+          </AddStudentModal>
         </Modal.Actions>
       </Modal>
     );
