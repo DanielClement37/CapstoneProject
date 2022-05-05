@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Dropdown } from 'semantic-ui-react'
-
+import Tutorial from '../../Images/tutorial.png'
+import '../Dashboard/Dashboard.css';
+import Modal from '../Modal/AddClassModal'
 
 
 const ClassButton = (props) => {
@@ -10,12 +11,9 @@ const ClassButton = (props) => {
   const navigate = useNavigate();
   return (
       <div className="Class-box" onClick={() => navigate("/classdashboard")}>
-        <Dropdown text = 'Edit'>
-            <Dropdown.Menu>
-                <Dropdown.Item text='Rename'/>
-                <Dropdown.Item text='Delete'/>
-            </Dropdown.Menu>
-        </Dropdown>
+        <div>
+            <Modal name="EditModal"/>
+        </div>
         <div className="Class-title">
           {props.className}
         </div>

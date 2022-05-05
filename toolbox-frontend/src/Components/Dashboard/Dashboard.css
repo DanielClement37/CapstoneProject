@@ -156,16 +156,26 @@
 }
 
 .logout-button {
-    display: block;
-    width: 62px;
-    height: 17px;
-    background-color: white;
-    color: #226900;
-    padding: 16px 30px;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-    border-radius: 15px;
-    margin-left: -6px;
-    margin-top: -3px;
+      display: block;
+      width: 62px;
+      height: 17px;
+      background-color: white;
+      color: #226900;
+      padding: 16px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 15px;
+      margin-left: -6px;
+      margin-top: -3px;
 }
+.Class-option {
+      position: absolute;
+      float: right;
+      color: white;
+      font-size: 3vh;
+      margin-left: 27%;
+      margin-top: .5vh;
+
+  }
+
