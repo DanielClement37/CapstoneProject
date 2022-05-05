@@ -1,12 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextArea, Button } from 'semantic-ui-react';
 import './ClassDashboard.css'
 //import Modal from '../Modal/AddClassModal'
 import Modal from '../Modal/AddClassModal'
-import StudentModal from '../Modal/AddStudentModal'
-import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useStore } from "../../Stores/Contexts/Store";
 import { actionTypes } from "../../Stores/actionTypes";
@@ -21,6 +19,7 @@ import axios from "axios";
 // TODO: Need to add functionality to receive Classroom Name and ID from Dashboard
 
  export default function ClassDashboard() {
+   const navigate = useNavigate();
    const [state, dispatch] = useStore();
    const { studentList, currentClass, updated } = state;
 

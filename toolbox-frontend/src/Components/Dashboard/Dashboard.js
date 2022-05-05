@@ -60,9 +60,9 @@ export default function Dashboard() {
           </h1>
         </div>
         <div className="Class-container">
-          {classList.map((c) => (
+          {classList.map((c, index) => (
             <ClassButton
-              key={c.classId}
+              key={index}
               classId={c.classId}
               className={c.className}
             />

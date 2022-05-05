@@ -19,6 +19,7 @@ function AddClassModal(props) {
   const [open3, setIsOpen3] = useState(false);
   const [open4, setIsOpen4] = useState(false);
   const [open5, setIsOpen5] = useState(false);
+  const [open6, setIsOpen6] = useState(false);
   const [time, setTime] = useState(300);
 
   let interval = null;
@@ -47,7 +48,7 @@ function AddClassModal(props) {
       .post(
         // remote url: "http://52.202.123.156:5000/api/classroom"
         // local testing: "http://localhost:5000/api/classroom"
-        "http://localhost:5000/api/classroom", //TODO: make this an environment variable
+        "http://52.202.123.156:5000/api/classroom", //TODO: make this an environment variable
         {
           TeacherId: user.sub,
           ClassName: className,

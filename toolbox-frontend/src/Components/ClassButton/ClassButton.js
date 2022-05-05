@@ -17,7 +17,9 @@ const ClassButton = (props) => {
   return (
       <div className="Class-box" onClick={() => 
       {
+        navigate(`/classdashboard`);
         dispatch({ type: actionTypes.UPDATE_CURRENT, payload: props.classId });
+      }}>
         <div>
             <Modal name="EditModal"/>
         </div>
