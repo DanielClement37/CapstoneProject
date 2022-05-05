@@ -19,7 +19,9 @@ function AddClassModal(props) {
   const [open3, setIsOpen3] = useState(false);
   const [open4, setIsOpen4] = useState(false);
   const [open5, setIsOpen5] = useState(false);
-  const [open6, setIsOpen6] = useState(false);
+  const [time, setTime] = useState(300);
+
+  let interval = null;
 
   const [className, setClassName] = useState("");
   const [state, dispatch] = useStore();
@@ -45,7 +47,7 @@ function AddClassModal(props) {
       .post(
         // remote url: "http://52.202.123.156:5000/api/classroom"
         // local testing: "http://localhost:5000/api/classroom"
-        "http://52.202.123.156:5000/api/classroom", //TODO: make this an environment variable
+        "http://localhost:5000/api/classroom", //TODO: make this an environment variable
         {
           TeacherId: user.sub,
           ClassName: className,
@@ -119,27 +121,16 @@ function AddClassModal(props) {
         <Modal.Header className="Add-header">Timer</Modal.Header>
         <Modal.Content>
           <Modal.Description>
-            <input
-              type="number"
-              className="Add-timertxt"
-              placeholder="00"
-            ></input>
-            <div className="Add-timertxt">:</div>
-            <input
-              type="number"
-              className="Add-timertxt"
-              placeholder="00"
-            ></input>
+            <input type="number" className='Add-timertxt' placeholder = "00" value={("0" + Math.floor((time / 60) % 60)).slice(-2)}></input>
+            <div className='Add-timertxt'>:</div>
+            <input type="number" className='Add-timertxt' placeholder = "00" value={("0" + Math.floor((time ) % 60)).slice(-2)}></input>
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
-          <Button className="Add-button" onClick={() => setIsOpen3(true)}>
-            Start
-          </Button>
-          <Button
-            className="Add-button Close-button"
-            onClick={() => setIsOpen2(false)}
-          >
+        <Button className="Add-button" onClick={() => interval = setInterval(() => {
+        setTime((time) => time - 1);
+      }, 1000)}>Start</Button>
+          <Button className='Add-button Close-button' onClick={() => setIsOpen2(false)}>
             Close
           </Button>
         </Modal.Actions>
@@ -201,18 +192,9 @@ function AddClassModal(props) {
         <Modal.Header className="Tut-header">Tutorial</Modal.Header>
         <Modal.Content>
           <Modal.Description>
-            <div className="Tut-text">
-              The large box on the left is the <b>Whiteboard</b>. Here, you can
-              type instructions for the class to read from the board.
-            </div>
-            <div className="Tut-text">
-              The <b>Timer</b> button allows you to set and display a timer for
-              things such as quizzes and tests.
-            </div>
-            <div className="Tut-text">
-              The <b>Students</b> button allows you too see the students in the
-              class and sort them in groups.
-            </div>
+            <div className="Tut-text">The large box on the left is the <b>Whiteboard</b>. Here, you can type instructions for the class to read from the board.</div>
+            <div className="Tut-text">The <b>Timer</b> button allows you to set and display a timer for things such as quizzes and tests.</div>
+            <div className="Tut-text">The <b>Students</b> button allows you to see the students in the class and sort them in groups.</div>
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
