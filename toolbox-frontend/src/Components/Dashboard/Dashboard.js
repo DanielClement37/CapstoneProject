@@ -21,7 +21,7 @@ export default function Dashboard() {
     const getClasses = async () => {
       const token = await getAccessTokenSilently();
       axios
-        .get(`http://localhost:5000/api/teacher/${user.sub}`, {
+        .get(`http://52.202.123.156:5000/api/teacher/${user.sub}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -49,9 +49,7 @@ export default function Dashboard() {
         <div className="Account-container">
           <Button
             className="Account-item"
-            onClick={() =>
-              logout({ appState: { targetUrl: "/" } })
-            }
+            onClick={() => logout({ appState: { targetUrl: "/" } })}
           >
             <div className="logout-button">LogOut</div>
           </Button>
@@ -62,8 +60,12 @@ export default function Dashboard() {
           </h1>
         </div>
         <div className="Class-container">
-          {classList.map((c) => (
-            <ClassButton key={c.classId} className={c.className} />
+          {classList.map((c, index) => (
+            <ClassButton
+              key={index}
+              classId={c.classId}
+              className={c.className}
+            />
           ))}
           <Modal name="AddClassModal"></Modal>
         </div>
