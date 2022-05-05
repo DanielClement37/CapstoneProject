@@ -19,6 +19,7 @@ function AddClassModal(props) {
   const [open3, setIsOpen3] = useState(false);
   const [open4, setIsOpen4] = useState(false);
   const [open5, setIsOpen5] = useState(false);
+  const [open6, setIsOpen6] = useState(false);
 
   const [className, setClassName] = useState("");
   const [state, dispatch] = useStore();
@@ -271,6 +272,45 @@ function AddClassModal(props) {
         </Modal.Actions>
       </Modal>
     );
+   } else if (type === "EditModal") {
+         return (
+           <Modal
+             className="Add-modal"
+             onClose={() => setIsOpen6(false)}
+             onOpen={() => setIsOpen6(true)}
+             open={open6}
+             trigger={
+               <div className="Class-option">
+                 ...
+               </div>
+             }
+             style={inlineStyle.modal}
+           >
+             <Modal.Header className="Add-header">Edit Class</Modal.Header>
+             <Modal.Content>
+               <Modal.Description>
+                  <Header className='Add-text'>Enter Class Name</Header>
+                    <Form>
+                        <Form.Field>
+                            <input
+                                placeholder="Edit Class Name"
+                                value={className}
+                                onChange={(e) => setClassName(e.target.value)}
+                            />
+                        </Form.Field>
+                  </Form>
+               </Modal.Description>
+             </Modal.Content>
+             <Modal.Actions>
+               <Button
+                 className="Add-button Close-button"
+                 onClick={() => setIsOpen6(false)}
+               >
+                 Close
+               </Button>
+             </Modal.Actions>
+           </Modal>
+         );
    }
 };
 

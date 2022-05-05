@@ -133,3 +133,27 @@ h2 span {
     margin-top: 27%;
     position: fixed;
 }*/
+
+.Back-item {
+      height: 50px;
+      width: 122px;
+      margin-left: 10%;
+      margin-top: 10px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+ }
+ .back-button {
+       display: block;
+       width: 62px;
+       height: 17px;
+       background-color: white;
+       color: #226900;
+       padding: 16px 30px;
+       font-size: 16px;
+       cursor: pointer;
+       text-align: center;
+       border-radius: 15px;
+       margin-left: -6px;
+       margin-top: -3px;
+ }

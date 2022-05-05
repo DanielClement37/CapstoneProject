@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { TextArea } from 'semantic-ui-react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { TextArea, Button } from 'semantic-ui-react';
 import './ClassDashboard.css'
 //import Modal from '../Modal/AddClassModal'
 import Modal from '../Modal/AddClassModal'
@@ -57,6 +59,14 @@ import axios from "axios";
    return (
      <div className="App">
        <div className="Dashboard-container">
+         <Button
+            className="Back-item"
+                onClick={() =>
+                    navigate("/dashboard")
+                }
+            >
+            <div className="back-button">Back</div>
+         </Button>
          <div className="Whiteboard-container">
            <TextArea class="Whiteboard" />
          </div>
